@@ -8,5 +8,8 @@ return {
   build = 'make tiktoken', -- Only on MacOS or Linux
   opts = {
     -- See Configuration section for options
+    highlight_headers = false,
+    separator = '---',
+    error_header = '> [!ERROR] Error',
   },
 }
