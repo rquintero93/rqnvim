@@ -34,6 +34,10 @@ return {
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-nvim-lua',
+      'kristijanhusak/vim-dadbod-completion',
+      'ray-x/cmp-sql',
     },
     config = function()
       -- See `:help cmp`
@@ -70,9 +74,9 @@ return {
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
-          --['<CR>'] = cmp.mapping.confirm { select = true },
-          --['<Tab>'] = cmp.mapping.select_next_item(),
-          --['<S-Tab>'] = cmp.mapping.select_prev_item(),
+          ['<CR>'] = cmp.mapping.confirm { select = true },
+          ['<Tab>'] = cmp.mapping.select_next_item(),
+          ['<S-Tab>'] = cmp.mapping.select_prev_item(),
 
           -- Manually trigger a completion from nvim-cmp.
           --  Generally you don't need this, because nvim-cmp will display
@@ -107,9 +111,13 @@ return {
             -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
             group_index = 0,
           },
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'path' },
+          { name = 'copilot', priority = 1500 },
+          { name = 'nvim_lsp', priority = 1000 },
+          { name = 'luasnip', priority = 750 },
+          { name = 'buffer', priority = 500 },
+          { name = 'path', priority = 250 },
+          { name = 'vim-dadbod-completion', priority = 700 },
+          { name = 'sql', priority = 100 },
         },
       }
     end,
