@@ -66,4 +66,5 @@ vim.opt.cursorlineopt = 'both'
 vim.o.clipboard = 'unnamedplus'
 
 vim.opt.whichwrap:append '<>[]hl'
+
 -- vim: ts=2 sts=2 sw=2 et

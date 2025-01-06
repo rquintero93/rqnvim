@@ -108,7 +108,7 @@ vim.keymap.set('n', '<Leader>fy', '<cmd>Telescope neoclip<cr>')
 
 --local utils = require 'utils.functions'
 
-function open_in_visidata()
+function Open_in_visidata()
   -- Write the current buffer to a temporary file
   vim.cmd 'write! /tmp/vd_temp.csv'
   -- Open the file in Visidata
@@ -137,7 +137,24 @@ function open_in_visidata()
   }, { detach = true })
   --
 end
-vim.api.nvim_set_keymap('n', '<leader>vd', '<cmd>lua open_in_visidata()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>vd', '<cmd>lua Open_in_visidata()<CR>', { noremap = true, silent = true })
+
+function _G.set_terminal_keymaps()
+  --local opts = { noremap = true }
+  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', '<cmd>ToggleTerm<cr>', opts)
+  vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
+end
+
+vim.cmd 'autocmd! TermOpen term://* lua set_terminal_keymaps()'
+
+vim.keymap.set('n', '<A-f>', '<cmd>ToggleTerm direction=float<cr>')
+vim.keymap.set('n', '<A-h>', '<cmd>ToggleTerm direction=horizontal<cr>')
+vim.keymap.set('n', '<A-v>', '<cmd>ToggleTerm direction=vertical<cr>')
+vim.keymap.set('n', '<A-t>', '<cmd>ToggleTerm<cr>')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
