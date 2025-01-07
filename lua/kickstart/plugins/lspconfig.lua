@@ -170,7 +170,7 @@ return {
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
-      --  Add any additional override configuration in the following tables. Available keys are:
+      --  Add any: additional override configuration in the following tables. Available keys are:
       --  - cmd (table): Override the default command used to start the server
       --  - filetypes (table): Override the default list of associated filetypes for the server
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
@@ -184,6 +184,12 @@ return {
         html = {},
         cssls = {},
         ruff = {},
+        taplo = {
+          filetypes = { 'toml' },
+          -- IMPORTANTE: esto es necesario para que taplo LSP funcione en repositorios que no sean git
+          root_dir = require('lspconfig.util').root_pattern('*.toml', '.git'),
+        },
+        yamlls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -233,6 +239,8 @@ return {
         'black',
         'isort',
         'ruff',
+        'taplo',
+        'yamlls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

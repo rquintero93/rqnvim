@@ -20,6 +20,7 @@ return {
         'vim',
         'vimdoc',
         'css',
+        'toml',
         'yaml',
       },
       -- Autoinstall languages that are not installed
