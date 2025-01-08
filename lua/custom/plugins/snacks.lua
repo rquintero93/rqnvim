@@ -19,7 +19,7 @@ return {
     -- refer to the configuration section below
     bigfile = { enabled = true },
     dashboard = {
-      width = 80,
+      width = 100,
       row = nil, -- dashboard position. nil for center
       col = nil, -- dashboard position. nil for center
       pane_gap = 4, -- empty columns between vertical panes
@@ -46,45 +46,45 @@ return {
         -- Used by the `header` section
         header = [[
 
-██████╗  ██████╗     ███╗   ██╗██╗   ██╗██╗███╗   ███╗
-██╔══██╗██╔═══██╗    ████╗  ██║██║   ██║██║████╗ ████║
-██████╔╝██║   ██║    ██╔██╗ ██║██║   ██║██║██╔████╔██║
-██╔══██╗██║▄▄ ██║    ██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║
-██║  ██║╚██████╔╝    ██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║
-╚═╝  ╚═╝ ╚══▀▀═╝     ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
-        ]],
+      ██████╗  ██████╗     ███╗   ██╗██╗   ██╗██╗███╗   ███╗
+      ██╔══██╗██╔═══██╗    ████╗  ██║██║   ██║██║████╗ ████║
+      ██████╔╝██║   ██║    ██╔██╗ ██║██║   ██║██║██╔████╔██║
+      ██╔══██╗██║▄▄ ██║    ██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║
+      ██║  ██║╚██████╔╝    ██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║
+      ╚═╝  ╚═╝ ╚══▀▀═╝     ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
+              ]],
       },
       -- item field formatters
-      formats = {
-        icon = function(item)
-          if item.file and item.icon == 'file' or item.icon == 'directory' then
-            return M.icon(item.file, item.icon)
-          end
-          return { item.icon, width = 2, hl = 'icon' }
-        end,
-        footer = { '%s', align = 'center' },
-        header = { '%s', align = 'center' },
-        file = function(item, ctx)
-          local fname = vim.fn.fnamemodify(item.file, ':~')
-          fname = ctx.width and #fname > ctx.width and vim.fn.pathshorten(fname) or fname
-          if #fname > ctx.width then
-            local dir = vim.fn.fnamemodify(fname, ':h')
-            local file = vim.fn.fnamemodify(fname, ':t')
-            if dir and file then
-              file = file:sub(-(ctx.width - #dir - 2))
-              fname = dir .. '/…' .. file
-            end
-          end
-          local dir, file = fname:match '^(.*)/(.+)$'
-          return dir and { { dir .. '/', hl = 'dir' }, { file, hl = 'file' } } or { { fname, hl = 'file' } }
-        end,
-      },
-      {
-        sections = {
-          { section = 'header' },
-          { section = 'keys', gap = 1, padding = 1 },
-          { section = 'startup' },
-        },
+      -- formats = {
+      --   icon = function(item)
+      --     if item.file and item.icon == 'file' or item.icon == 'directory' then
+      --       return M.icon(item.file, item.icon)
+      --     end
+      --     return { item.icon, width = 2, hl = 'icon' }
+      --   end,
+      --   footer = { '%s', align = 'center' },
+      --   header = { '%s', align = 'center' },
+      --   file = function(item, ctx)
+      --     local fname = vim.fn.fnamemodify(item.file, ':~')
+      --     fname = ctx.width and #fname > ctx.width and vim.fn.pathshorten(fname) or fname
+      --     if #fname > ctx.width then
+      --       local dir = vim.fn.fnamemodify(fname, ':h')
+      --       local file = vim.fn.fnamemodify(fname, ':t')
+      --       if dir and file then
+      --         file = file:sub(-(ctx.width - #dir - 2))
+      --         fname = dir .. '/…' .. file
+      --       end
+      --     end
+      --     local dir, file = fname:match '^(.*)/(.+)$'
+      --     return dir and { { dir .. '/', hl = 'dir' }, { file, hl = 'file' } } or { { fname, hl = 'file' } }
+      --   end,
+      -- },
+      sections = {
+        { section = 'header' },
+        { section = 'keys', gap = 1, padding = 2 },
+        { icon = ' ', title = 'Recent Files', section = 'recent_files', indent = 2, padding = 2 },
+        { icon = ' ', title = 'Projects', section = 'projects', indent = 2, padding = 2 },
+        { section = 'startup' },
       },
     },
     notifier = {
@@ -119,7 +119,7 @@ return {
       more_format = ' ↓ %d lines ',
       refresh = 50, -- refresh at most every 50ms
     },
-    statuscolumn = { enabled = true },
+    -- statuscolumn = { enabled = true },
     scratch = {
       enabled = true,
     },
@@ -154,7 +154,7 @@ return {
     --   desc = 'Select Scratch Buffer',
     -- },
     {
-      '<leader>n',
+      '<leader>N',
       function()
         Snacks.notifier.show_history()
       end,
@@ -182,24 +182,6 @@ return {
       end,
       desc = 'Prev Reference',
       mode = { 'n', 't' },
-    },
-    {
-      '<leader>N',
-      desc = 'Neovim News',
-      function()
-        Snacks.win {
-          file = vim.api.nvim_get_runtime_file('doc/news.txt', false)[1],
-          width = 0.6,
-          height = 0.6,
-          wo = {
-            spell = false,
-            wrap = false,
-            signcolumn = 'yes',
-            statuscolumn = ' ',
-            conceallevel = 3,
-          },
-        }
-      end,
     },
   },
 }

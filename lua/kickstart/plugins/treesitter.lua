@@ -12,6 +12,7 @@ return {
         'python',
         'sql',
         'html',
+        'latex',
         'lua',
         'luadoc',
         'markdown',

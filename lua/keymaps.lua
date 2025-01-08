@@ -64,6 +64,8 @@ map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
 
 -- Close buffer
 map('n', '<leader>x', '<Cmd>BufferClose<CR>', opts)
+-- Open new buffer
+map('n', '<leader>n', '<Cmd>enew<CR>', opts)
 
 -- Wipeout buffer
 --                 :BufferWipeout
@@ -103,7 +105,6 @@ vim.keymap.set('n', '<Leader>gg', '<cmd>LazyGit<cr>')
 
 vim.keymap.set('n', '<Leader>cp', '<cmd>CopilotChatToggle<cr>')
 
-
 vim.keymap.set('n', '<Leader>fs', '<cmd>Telescope symbols<cr>')
 vim.keymap.set('n', '<Leader>fy', '<cmd>Telescope neoclip<cr>')
 
@@ -112,17 +113,7 @@ vim.keymap.set('n', '<Leader>fy', '<cmd>Telescope neoclip<cr>')
 function Open_in_visidata()
   -- Write the current buffer to a temporary file
   vim.cmd 'write! /tmp/vd_temp.csv'
-  -- Open the file in Visidata
 
-  -- vim.fn.jobstart({"open","-a","Terminal","/usr/local/bin/visidata", "/tmp/vd_temp.csv"}, {detach = true})
-
-  --   vim.fn.jobstart({
-  --     "osascript",
-  --     "-e",
-  --     [[tell application "Terminal" to do script "visidata /tmp/vd_temp.csv"]],
-  --   }, {detach = true})
-  -- end
-  -- Write the current buffer to a temporary file
   vim.fn.jobstart({
     'osascript',
     '-e',
