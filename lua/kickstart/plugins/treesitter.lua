@@ -22,6 +22,7 @@ return {
         'css',
         'toml',
         'yaml',
+        'regex',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
