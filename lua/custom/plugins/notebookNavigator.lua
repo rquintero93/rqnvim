@@ -14,8 +14,8 @@ return {
         require('notebook-navigator').move_cell 'u'
       end,
     },
-    { '<leader>J', "<cmd>lua require('notebook-navigator').run_cell()<cr>" },
-    { '<leader>j', "<cmd>lua require('notebook-navigator').run_and_move()<cr>" },
+    { '<leader>J', "<cmd>lua require('notebook-navigator').run_cell()<cr>", { desc = 'run cell' } },
+    { '<leader>j', "<cmd>lua require('notebook-navigator').run_and_move()<cr>", { desc = 'run cell and move' } },
   },
   dependencies = {
     'echasnovski/mini.comment',

@@ -76,4 +76,6 @@ vim.opt.expandtab = false
 vim.opt.smarttab = false
 
 vim.opt.filetype = 'on'
+
+vim.loader.enable()
 -- vim: ts=2 sts=2 sw=2 et

@@ -3,7 +3,7 @@
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'clear search highlight' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
@@ -65,7 +65,7 @@ map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
 -- Close buffer
 map('n', '<leader>x', '<Cmd>BufferClose<CR>', opts)
 -- Open new buffer
-map('n', '<leader>n', '<Cmd>enew<CR>', opts)
+map('n', '<leader>n', '<Cmd>enew<CR>', { desc = 'BufferNew' })
 
 -- Wipeout buffer
 --                 :BufferWipeout
@@ -89,7 +89,7 @@ map('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', opts)
 --map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 
 --telescope find marks
-map('n', '<leader>ma', '<cmd>Telescope marks<CR>', { desc = 'telescope find marks' })
+map('n', '<leader>fm', '<cmd>Telescope marks<CR>', { desc = '[f]ind [m]arks' })
 
 vim.api.nvim_set_keymap('n', '<Leader>db', ':DBUIToggle<CR>', { noremap = true, silent = true })
 
@@ -105,10 +105,8 @@ vim.keymap.set('n', '<Leader>gg', '<cmd>LazyGit<cr>')
 
 vim.keymap.set('n', '<Leader>cp', '<cmd>CopilotChatToggle<cr>')
 
-vim.keymap.set('n', '<Leader>fs', '<cmd>Telescope symbols<cr>')
-vim.keymap.set('n', '<Leader>fy', '<cmd>Telescope neoclip<cr>')
-
---local utils = require 'utils.functions'
+vim.keymap.set('n', '<Leader>fs', '<cmd>Telescope symbols<cr>', { desc = '[f]ind [s]ymbols' })
+vim.keymap.set('n', '<Leader>fy', '<cmd>Telescope neoclip<cr>', { desc = '[f]ind [y]anks' })
 
 function Open_in_visidata()
   -- Write the current buffer to a temporary file
@@ -143,10 +141,13 @@ end
 
 vim.cmd 'autocmd! TermOpen term://* lua set_terminal_keymaps()'
 
-vim.keymap.set('n', '<A-f>', '<cmd>ToggleTerm direction=float<cr>')
-vim.keymap.set('n', '<A-h>', '<cmd>ToggleTerm direction=horizontal<cr>')
-vim.keymap.set('n', '<A-v>', '<cmd>ToggleTerm direction=vertical<cr>')
-vim.keymap.set('n', '<A-t>', '<cmd>ToggleTerm<cr>')
+vim.keymap.set('n', '<A-f>', '<cmd>ToggleTerm direction=float<cr>', { desc = 'toggle floating terminal' })
+vim.keymap.set('n', '<A-h>', '<cmd>ToggleTerm direction=horizontal<cr>', { desc = 'toggle horizontal terminal' })
+vim.keymap.set('n', '<A-v>', '<cmd>ToggleTerm direction=vertical<cr>', { desc = 'toggle vertical terminal' })
+-- vim.keymap.set('n', '<A-t>', '<cmd>ToggleTerm<cr>')
+
+-- Lspaga code action
+vim.keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<cr>', opts)
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

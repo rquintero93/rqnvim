@@ -201,13 +201,13 @@ return {
       end,
       desc = 'Notification History',
     },
-    {
-      '<leader>un',
-      function()
-        Snacks.notifier.hide()
-      end,
-      desc = 'Dismiss All Notifications',
-    },
+    -- {
+    --   '<leader>un',
+    --   function()
+    --     Snacks.notifier.hide()
+    --   end,
+    --   desc = 'Dismiss All Notifications',
+    -- },
     {
       ']]',
       function()
