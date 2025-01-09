@@ -103,7 +103,7 @@ return {
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
-          map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
+          -- map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
@@ -179,8 +179,9 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        pyright = {},
+        -- pyright = {},
         sqlls = {},
+        jedi_language_server = { hover = { enable = false }, jediSettings = { autoImportModules = { 'numpy', 'pandas' } } },
         html = {},
         cssls = {},
         ruff = {},
@@ -233,7 +234,6 @@ return {
         'html-lsp',
         'css-lsp',
         'prettier',
-        'pyright',
         'sqlls',
         'sqlfmt',
         'black',
@@ -241,6 +241,7 @@ return {
         'ruff',
         'taplo',
         'yamlls',
+        'jedi-language-server',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
