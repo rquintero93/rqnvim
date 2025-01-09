@@ -4,6 +4,7 @@ return {
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help ibl`
     main = 'ibl',
+    ft = { 'lua', 'vim', 'python', 'sql' },
     opts = {},
   },
 }

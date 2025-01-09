@@ -1,1 +1,1 @@
-return { 'karb94/neoscroll.nvim', lazy = false }
+return { 'karb94/neoscroll.nvim', event = { 'BufReadPre', 'BufNewFile' } }
