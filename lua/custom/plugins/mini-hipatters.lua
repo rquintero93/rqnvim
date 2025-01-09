@@ -1,6 +1,7 @@
 return {
   'echasnovski/mini.hipatterns',
-  event = { 'BufReadPre', 'BufNewFile' },
+  -- event = { 'BufReadPre', 'BufNewFile' },
+  ft = { 'python', 'markdown' },
   dependencies = { 'GCBallesteros/NotebookNavigator.nvim' },
   opts = function()
     local nn = require 'notebook-navigator'

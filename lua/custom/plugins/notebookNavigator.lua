@@ -1,6 +1,6 @@
 return {
   'GCBallesteros/NotebookNavigator.nvim',
-
+  ft = { 'python', 'r', 'julia' },
   keys = {
     {
       ']h',
@@ -22,7 +22,7 @@ return {
     'hkupty/iron.nvim', -- repl provider
     'anuvyklack/hydra.nvim',
   },
-  event = { 'BufReadPre', 'BufNewFile' },
+  -- event = { 'BufReadPre', 'BufNewFile' },
   config = function()
     local nn = require 'notebook-navigator'
     nn.setup { activate_hydra_keys = '<leader>hy' }

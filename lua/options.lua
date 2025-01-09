@@ -67,11 +67,13 @@ vim.o.clipboard = 'unnamedplus'
 
 vim.opt.whichwrap:append '<>[]hl'
 
-vim.opt.autoindent = true
+-- vim.opt.autoindent = true
 vim.opt.smartindent = true
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 vim.opt.smarttab = false
+
+vim.opt.filetype = 'on'
 -- vim: ts=2 sts=2 sw=2 et
