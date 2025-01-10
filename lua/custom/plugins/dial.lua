@@ -3,6 +3,7 @@ return {
     'monaqa/dial.nvim',
     recommended = true,
     desc = 'Increment and decrement numbers, dates, and more',
+    event = { 'BufRead', 'BufNewFile' },
   -- stylua: ignore
     opts = function()
       local augend = require 'dial.augend'
