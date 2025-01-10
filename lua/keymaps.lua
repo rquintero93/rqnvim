@@ -149,6 +149,9 @@ vim.keymap.set('n', '<A-v>', '<cmd>ToggleTerm direction=vertical<cr>', { desc = 
 -- Lspaga code action
 vim.keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<cr>', opts)
 
+-- Neogen annotation keymap
+
+vim.api.nvim_set_keymap('n', '<Leader>cn', ":lua require('neogen').generate()<CR>", { desc = '[c]ode a[n]otation' })
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
