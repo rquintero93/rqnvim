@@ -62,7 +62,7 @@ return {
         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
         { '<leader>d', group = '[D]atabase' },
         { '<leader>r', group = '[R]EPL' },
-        { '<leader>s', group = '[S]earch' },
+        { '<leader>s', group = '[S]plits' },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>v', group = '[V]isidata' },
         { '<leader>g', group = '[G]it' },
