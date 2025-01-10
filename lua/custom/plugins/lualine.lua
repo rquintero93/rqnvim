@@ -9,8 +9,8 @@ return {
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
-          statusline = {},
           winbar = {},
+          statusline = { 'snacks_dashboard' },
         },
         ignore_focus = {},
         always_divide_middle = true,
