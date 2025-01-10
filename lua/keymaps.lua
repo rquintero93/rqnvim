@@ -112,27 +112,28 @@ function Open_in_visidata()
   -- Write the current buffer to a temporary file
   vim.cmd 'write! /tmp/vd_temp.csv'
 
-  vim.fn.jobstart({
-    'osascript',
-    '-e',
-    [[tell application "Ghostty" to activate]],
-    '-e',
-    [[tell application "System Events" to keystroke "t" using {command down}]],
-    '-e',
-    [[delay 0.5]],
-    '-e',
-    [[tell application "System Events" to keystroke "visidata /tmp/vd_temp.csv"]],
-    '-e',
-    [[tell application "System Events" to key code 36]], -- Press "Enter"
-  }, { detach = true })
+  vim.cmd 'TermExec cmd="visidata /tmp/vd_temp.csv" direction=float name="visidata"'
+  -- vim.fn.jobstart({
+  --   'osascript',
+  --   '-e',
+  --   [[tell application "Ghostty" to activate]],
+  --   '-e',
+  --   [[tell application "System Events" to keystroke "t" using {command down}]],
+  --   '-e',
+  --   [[delay 0.5]],
+  --   '-e',
+  --   [[tell application "System Events" to keystroke "visidata /tmp/vd_temp.csv"]],
+  --   '-e',
+  --   [[tell application "System Events" to key code 36]], -- Press "Enter"
+  -- }, { detach = true })
   --
 end
-vim.api.nvim_set_keymap('n', '<leader>vd', '<cmd>lua Open_in_visidata()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>vd', '<cmd>lua Open_in_visidata()<CR>', { desc = '[V]iew [D]ata', noremap = true, silent = true })
 
 function _G.set_terminal_keymaps()
   --local opts = { noremap = true }
   vim.api.nvim_buf_set_keymap(0, 't', '<esc>', '<cmd>ToggleTerm<cr>', opts)
-  vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
+  -- vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
@@ -147,7 +148,7 @@ vim.keymap.set('n', '<A-v>', '<cmd>ToggleTerm direction=vertical<cr>', { desc = 
 -- vim.keymap.set('n', '<A-t>', '<cmd>ToggleTerm<cr>')
 
 -- Lspaga code action
-vim.keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<cr>', opts)
+vim.keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<cr>', { desc = 'Lsp [c]ode [a]ction' })
 
 -- Neogen annotation keymap
 
