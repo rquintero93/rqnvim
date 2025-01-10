@@ -179,6 +179,16 @@ vim.keymap.set('v', 'g<C-x>', function()
   require('dial.map').manipulate('decrement', 'gvisual')
 end)
 
+-- window management
+vim.keymap.set('n', '<leader>sv', '<C-w>v', { desc = 'Split window vertically' }) -- split window vertically
+vim.keymap.set('n', '<leader>sh', '<C-w>s', { desc = 'Split window horizontally' }) -- split window horizontally
+vim.keymap.set('n', '<leader>se', '<C-w>=', { desc = 'Make splits equal size' }) -- make split windows equal width & height
+vim.keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
+-- vim.keymap.set('n', '<leader>to', '<cmd>tabnew<CR>', { desc = 'Open new tab' }) -- open new tab
+-- vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = 'Close current tab' }) -- close current tab
+-- vim.keymap.set('n', '<leader>tn', '<cmd>tabn<CR>', { desc = 'Go to next tab' }) --  go to next tab
+-- vim.keymap.set('n', '<leader>tp', '<cmd>tabp<CR>', { desc = 'Go to previous tab' }) --  go to previous tab
+-- vim.keymap.set('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new tab' }) --  move current buffer to new tab
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -193,4 +203,63 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+local function augroup(name)
+  return vim.api.nvim_create_augroup('lazyvim_' .. name, { clear = true })
+end
+-- resize splits if window got resized
+-- vim.api.nvim_create_autocmd({ 'VimResized' }, {
+--   group = augroup 'resize_splits',
+--   callback = function()
+--     local current_tab = vim.fn.tabpagenr()
+--     vim.cmd 'tabdo wincmd ='
+--     vim.cmd('tabnext ' .. current_tab)
+--   end,
+-- })
+
+-- close some filetypes with <q>
+vim.api.nvim_create_autocmd('FileType', {
+  group = augroup 'close_with_q',
+  pattern = {
+    'PlenaryTestPopup',
+    'checkhealth',
+    'dbout',
+    'gitsigns-blame',
+    'grug-far',
+    'help',
+    'lspinfo',
+    'neotest-output',
+    'neotest-output-panel',
+    'neotest-summary',
+    'notify',
+    'qf',
+    'spectre_panel',
+    'startuptime',
+    'tsplayground',
+  },
+  callback = function(event)
+    vim.bo[event.buf].buflisted = false
+    vim.schedule(function()
+      vim.keymap.set('n', 'q', function()
+        vim.cmd 'close'
+        pcall(vim.api.nvim_buf_delete, event.buf, { force = true })
+      end, {
+        buffer = event.buf,
+        silent = true,
+        desc = 'Quit buffer',
+      })
+    end)
+  end,
+})
+
+-- Auto create dir when saving a file, in case some intermediate directory does not exist
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+  group = augroup 'auto_create_dir',
+  callback = function(event)
+    if event.match:match '^%w%w+:[\\/][\\/]' then
+      return
+    end
+    local file = vim.uv.fs_realpath(event.match) or event.match
+    vim.fn.mkdir(vim.fn.fnamemodify(file, ':p:h'), 'p')
+  end,
+})
 -- vim: ts=2 sts=2 sw=2 et

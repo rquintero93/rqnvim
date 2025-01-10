@@ -77,5 +77,21 @@ vim.opt.smarttab = false
 
 vim.opt.filetype = 'on'
 
+vim.g.snacks_animate = true
+
+vim.g.root_lsp_ignore = { 'copilot' }
+
+vim.g.trouble_lualine = true
+
+-- vim.opt.linebreak = true
+
+-- vim.opt.list = true
+
+vim.opt.spelllang = 'en'
+
+-- vim.opt.statuscolumn = [[%!v:lua.require'snacks.statuscolumn'.get()]]
+
+vim.opt.termguicolors = true
+
 vim.loader.enable()
 -- vim: ts=2 sts=2 sw=2 et
