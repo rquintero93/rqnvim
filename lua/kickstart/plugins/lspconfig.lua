@@ -184,7 +184,7 @@ return {
         jedi_language_server = { hover = { enable = false }, jediSettings = { autoImportModules = { 'numpy', 'pandas' } } },
         html = {},
         cssls = {},
-        ruff = {},
+        -- ruff = {},
         taplo = {
           filetypes = { 'toml' },
           -- IMPORTANTE: esto es necesario para que taplo LSP funcione en repositorios que no sean git
@@ -211,7 +211,7 @@ return {
                 callSnippet = 'Replace',
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
+              diagnostics = { disable = { 'missing-fields' }, globals = { 'vim' } },
             },
           },
         },
