@@ -1,6 +1,6 @@
 return {
   'lukas-reineke/indent-blankline.nvim',
-  -- event = { 'BufReadPre', 'BufNewFile' },
+  event = 'VeryLazy',
   ft = { 'lua', 'vim', 'python', 'sql' },
   main = 'ibl',
   ---@module "ibl"

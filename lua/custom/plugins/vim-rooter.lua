@@ -1,1 +1,1 @@
-return { 'airblade/vim-rooter', lazy = false }
+return { 'airblade/vim-rooter', event = 'VeryLazy' }

@@ -1,3 +1,3 @@
 return {
-  { 'akinsho/toggleterm.nvim', version = '*', config = true },
+  { 'akinsho/toggleterm.nvim', event = 'VeryLazy', version = '*', config = true },
 }
