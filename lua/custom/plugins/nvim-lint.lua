@@ -27,6 +27,10 @@ return {
         --     return vim.fs.find({ "selene.toml" }, { path = ctx.filename, upward = true })[1]
         --   end,
         -- },
+        sqlfluff = {
+          -- `args` is a list of arguments to pass to the linter.
+          args = { 'lint', '-f', 'json' },
+        },
       },
     },
     config = function(_, opts)

@@ -27,15 +27,19 @@ return {
           lsp_format_opt = 'fallback'
         end
         return {
-          timeout_ms = 5000,
+          timeout_ms = 100000,
           lsp_format = lsp_format_opt,
         }
       end,
+      sqlfluff = {
+        -- `args` is a list of arguments to pass to the formatter.
+        args = { 'format' },
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        python = { 'isort', 'black' },
-        sql = { 'sqlfmt' },
+        python = { 'isort', 'black', 'ruff_fix' },
+        sql = { 'sqlfluff' },
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
       },
