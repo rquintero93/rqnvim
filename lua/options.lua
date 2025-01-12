@@ -94,4 +94,5 @@ vim.opt.spelllang = 'en'
 vim.opt.termguicolors = true
 
 vim.loader.enable()
+
 -- vim: ts=2 sts=2 sw=2 et
