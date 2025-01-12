@@ -7,6 +7,7 @@ return {
       'antoinemadec/FixCursorHold.nvim',
       'nvim-treesitter/nvim-treesitter',
     },
+    event = { 'BufNewFile', 'BufRead' },
     config = function()
       require('neotest').setup {
         adapters = {

@@ -30,9 +30,9 @@ return {
         rename = {
           enable = false,
         },
-        -- ui = {
-        --   code_action = '',
-        -- },
+        ui = {
+          code_action = '',
+        },
       }
     end,
     dependencies = {
