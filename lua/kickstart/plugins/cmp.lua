@@ -38,6 +38,7 @@ return {
       'hrsh7th/cmp-nvim-lua',
       'kristijanhusak/vim-dadbod-completion',
       'ray-x/cmp-sql',
+      'rcarriga/cmp-dap',
     },
     config = function()
       -- See `:help cmp`
@@ -118,6 +119,7 @@ return {
           { name = 'path', priority = 250 },
           { name = 'vim-dadbod-completion', priority = 700 },
           { name = 'sql', priority = 100 },
+          { name = 'dap', priority = 2000 },
         },
       }
     end,
