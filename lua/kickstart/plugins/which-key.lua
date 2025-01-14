@@ -59,10 +59,16 @@ return {
 
       -- Document existing key chains
       spec = {
-        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
+        { '<leader>c', group = '[C]hat', mode = { 'n', 'x' } },
         { '<leader>d', group = '[D]atabase' },
+        { '<leader>b', group = 'de[B]ugger' },
         { '<leader>r', group = '[R]EPL' },
+        { '<leader>ri', group = '[R]EPL [I]nterrupt' },
+        { '<leader>rc', group = '[R]EPL [C]lear' },
         { '<leader>rs', group = '[R]EPL [S]end' },
+        { '<leader>rsf', group = '[R]EPL [S]end [F]ile' },
+        { '<leader>rsl', group = '[R]EPL [S]end [L]ine' },
+        { '<leader>rss', group = '[R]EPL [S]end [S]election', mode = { 'v' } },
         { '<leader>s', group = '[S]plits' },
         { '<leader>l', group = '[L]SP' },
         { '<leader>w', group = '[W]orkspace' },
@@ -72,7 +78,7 @@ return {
         { '<leader>t', group = '[T]rouble' },
         { '<leader>u', group = '[U]ndo tree' },
         { '<leader>j', group = '[J]upyter' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        -- { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
   },

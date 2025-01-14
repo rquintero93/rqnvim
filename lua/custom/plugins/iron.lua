@@ -40,7 +40,7 @@ return {
         -- cr = '<space>r<cr>',
         interrupt = '<space>ri',
         -- exit = '<space>rq',
-        clear = '<space>rl',
+        clear = '<space>rc',
       },
       -- If the highlight is on, you can change how it looks
       -- For the available options, check nvim_set_hl
@@ -54,5 +54,6 @@ return {
     vim.keymap.set('n', '<space>rb', '<cmd>IronRepl<cr>', { desc = '[R]EPL [B]egin' })
     vim.keymap.set('n', '<space>rr', '<cmd>IronRestart<cr>', { desc = '[R]EPL [R]estart' })
     vim.keymap.set('n', '<space>rh', '<cmd>IronHide<cr>', { desc = '[R]EPL [H]ide' })
+    vim.keymap.set('n', '<space>rf', '<cmd>IronFocus<cr>', { desc = '[R]EPL [F]ocus' })
   end,
 }

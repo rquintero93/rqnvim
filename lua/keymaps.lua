@@ -1,6 +1,3 @@
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
-
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'clear search highlight' })
@@ -96,14 +93,22 @@ vim.api.nvim_set_keymap('n', '<leader>db', ':lua Close_snacks_dashboard_and_togg
 vim.api.nvim_set_keymap('n', '<Leader>df', ':DBUIFindBuffer<CR>', { noremap = true, silent = true })
 
 -- iron also has a list of commands, see :h iron-commands for all available commands
-vim.keymap.set('n', '<Leader>rs', '<cmd>IronRepl<cr>')
+vim.keymap.set('n', '<Leader>rb', '<cmd>IronRepl<cr>')
 vim.keymap.set('n', '<Leader>rr', '<cmd>IronRestart<cr>')
 vim.keymap.set('n', '<Leader>rf', '<cmd>IronFocus<cr>')
 vim.keymap.set('n', '<Leader>rh', '<cmd>IronHide<cr>')
 
 vim.keymap.set('n', '<Leader>gg', '<cmd>LazyGit<cr>')
 
-vim.keymap.set('n', '<Leader>cp', '<cmd>CopilotChatToggle<cr>')
+vim.keymap.set('n', '<Leader>cc', '<cmd>CopilotChatToggle<cr>', { desc = 'Toggle [C]opilot [C]hat' })
+vim.keymap.set('n', '<Leader>cR', '<cmd>CopilotChatReset<cr>', { desc = '[C]hat [R]eset' })
+vim.keymap.set('n', '<Leader>cm', '<cmd>CopilotChatModels<cr>', { desc = '[C]hat [M]odels' })
+vim.keymap.set('n', '<Leader>cd', '<cmd>CopilotChatDocs<cr>', { desc = '[C]hat add [D]ocs' })
+vim.keymap.set('n', '<Leader>ct', '<cmd>CopilotChatTests<cr>', { desc = '[C]hat add [T]ests' })
+vim.keymap.set('n', '<Leader>ce', '<cmd>CopilotChatExplain<cr>', { desc = '[C]hat [E]xplain' })
+vim.keymap.set('n', '<Leader>cf', '<cmd>CopilotChatFix<cr>', { desc = '[C]hat [F]ix' })
+vim.keymap.set('n', '<Leader>cr', '<cmd>CopilotChatReview<cr>', { desc = '[C]hat [R]eview' })
+vim.keymap.set('n', '<Leader>co', '<cmd>CopilotChatOptimize<cr>', { desc = '[C]hat [O]ptimize' })
 
 function Open_in_visidata()
   -- Write the current buffer to a temporary file
