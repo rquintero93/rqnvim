@@ -85,9 +85,8 @@ vim.g.trouble_lualine = true
 
 -- vim.opt.linebreak = true
 
--- vim.opt.list = true
-
-vim.opt.spelllang = 'en'
+-- vim.opt.spell = true
+-- vim.opt.spelllang = 'en'
 
 -- vim.opt.statuscolumn = [[%!v:lua.require'snacks.statuscolumn'.get()]]
 

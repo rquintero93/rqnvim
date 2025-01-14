@@ -36,14 +36,14 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- Move to previous/next
-map('n', '<S-tab>', '<Cmd>BufferPrevious<CR>', opts)
-map('n', '<tab>', '<Cmd>BufferNext<CR>', opts)
+map('n', '<S-tab>', '<Cmd>bprevious<CR>', opts)
+map('n', '<tab>', '<Cmd>bnext<CR>', opts)
 
 -- Re-order to previous/next
 map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
 map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
 
--- Goto buffer in position...
+-- Go to buffer in position...
 map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts)
 map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts)
 map('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', opts)
@@ -63,34 +63,33 @@ map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
 --                 :BufferGotoUnpinned
 
 -- Close buffer
-map('n', '<leader>x', '<Cmd>BufferClose<CR>', opts)
+map('n', '<leader>x', '<Cmd>bd<CR>', opts)
 -- Open new buffer
 map('n', '<leader>n', '<Cmd>enew<CR>', { desc = 'BufferNew' })
-
--- Wipeout buffer
---                 :BufferWipeout
-
--- Close commands
---                 :BufferCloseAllButCurrent
---                 :BufferCloseAllButPinned
---                 :BufferCloseAllButCurrentOrPinned
---                 :BufferCloseBuffersLeft
---                 :BufferCloseBuffersRight
 
 -- Magic buffer-picking mode
 map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
 map('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', opts)
 
--- Sort automatically by...
---map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
---map('n', '<Space>bn', '<Cmd>BufferOrderByName<CR>', opts)
---map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
---map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
---map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
-
 --telescope find marks
 map('n', '<leader>fm', '<cmd>Telescope marks<CR>', { desc = '[f]ind [m]arks' })
 
+--database ui keymaps
+-- function Close_snacks_dashboard_and_toggle_dbui()
+--   -- Iterate over all buffers to find the snacks.nvim dashboard
+--   for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+--     local bufname = vim.api.nvim_buf_get_name(buf)
+--     if string.find(bufname, 'snacks-dashboard') then
+--       -- Close the snacks.nvim dashboard buffer
+--       vim.api.nvim_buf_delete(buf, { force = true })
+--       break
+--     end
+--   end
+--   -- Toggle dadbod-ui
+--   vim.cmd 'DBUIToggle'
+-- end
+-- -- Map the function to a key combination, e.g., <leader>db
+-- vim.api.nvim_set_keymap('n', '<leader>db', ':lua Close_snacks_dashboard_and_toggle_dbui()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>db', ':DBUIToggle<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<Leader>df', ':DBUIFindBuffer<CR>', { noremap = true, silent = true })
