@@ -59,7 +59,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 5
 
 vim.opt.cursorlineopt = 'both'
 
@@ -94,6 +94,8 @@ vim.opt.termguicolors = true
 
 vim.opt.laststatus = 3
 vim.opt.splitkeep = 'screen'
+
+-- vim.opt.foldmethod = 'indent'
 
 vim.loader.enable()
 

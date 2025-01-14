@@ -248,6 +248,7 @@ return {
         'sqlfluff',
         'selene',
         'markdownlint',
+        'debugpy',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
