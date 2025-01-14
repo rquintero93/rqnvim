@@ -92,6 +92,9 @@ vim.g.trouble_lualine = true
 
 vim.opt.termguicolors = true
 
+vim.opt.laststatus = 3
+vim.opt.splitkeep = 'screen'
+
 vim.loader.enable()
 
 -- vim: ts=2 sts=2 sw=2 et
