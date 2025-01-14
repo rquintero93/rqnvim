@@ -36,8 +36,8 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- Move to previous/next
-map('n', '<S-tab>', '<Cmd>bprevious<CR>', opts)
-map('n', '<tab>', '<Cmd>bnext<CR>', opts)
+map('n', '<S-tab>', '<Cmd>bprevious<CR>', { desc = 'Previous Buffer', noremap = true, silent = true })
+map('n', '<tab>', '<Cmd>bnext<CR>', { desc = 'Next Buffer', noremap = true, silent = true })
 
 -- Re-order to previous/next
 map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
@@ -63,9 +63,10 @@ map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
 --                 :BufferGotoUnpinned
 
 -- Close buffer
-map('n', '<leader>x', '<Cmd>bd<CR>', opts)
+map('n', '<leader>x', '<Cmd>bd<CR>', { desc = 'Close Buffer', noremap = true, silent = true })
+map('n', '<leader>X', '<Cmd>bd!<CR>', { desc = 'Close Buffer (No Save)', noremap = true, silent = true })
 -- Open new buffer
-map('n', '<leader>n', '<Cmd>enew<CR>', { desc = 'BufferNew' })
+map('n', '<leader>n', '<Cmd>enew<CR>', { desc = 'New Buffer', noremap = true, silent = true })
 
 -- Magic buffer-picking mode
 map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
@@ -75,22 +76,23 @@ map('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', opts)
 map('n', '<leader>fm', '<cmd>Telescope marks<CR>', { desc = '[f]ind [m]arks' })
 
 --database ui keymaps
--- function Close_snacks_dashboard_and_toggle_dbui()
---   -- Iterate over all buffers to find the snacks.nvim dashboard
---   for _, buf in ipairs(vim.api.nvim_list_bufs()) do
---     local bufname = vim.api.nvim_buf_get_name(buf)
---     if string.find(bufname, 'snacks-dashboard') then
---       -- Close the snacks.nvim dashboard buffer
---       vim.api.nvim_buf_delete(buf, { force = true })
---       break
---     end
---   end
---   -- Toggle dadbod-ui
---   vim.cmd 'DBUIToggle'
--- end
--- -- Map the function to a key combination, e.g., <leader>db
--- vim.api.nvim_set_keymap('n', '<leader>db', ':lua Close_snacks_dashboard_and_toggle_dbui()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>db', ':DBUIToggle<CR>', { noremap = true, silent = true })
+function Close_snacks_dashboard_and_toggle_dbui()
+  -- Iterate over all buffers to find the snacks.nvim dashboard
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    -- Use vim.bo to get the filetype of the buffer
+    if vim.bo[buf].filetype == 'snacks_dashboard' then
+      -- Close the snacks.nvim dashboard buffer
+      vim.api.nvim_buf_delete(buf, { force = true })
+      break
+    end
+  end
+  -- Toggle dadbod-ui
+  vim.cmd 'DBUIToggle'
+end
+
+-- Map the function to a key combination, e.g., <leader>db
+vim.api.nvim_set_keymap('n', '<leader>db', ':lua Close_snacks_dashboard_and_toggle_dbui()<CR>', { desc = 'Toggle DB', noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>db', ':DBUIToggle<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<Leader>df', ':DBUIFindBuffer<CR>', { noremap = true, silent = true })
 
