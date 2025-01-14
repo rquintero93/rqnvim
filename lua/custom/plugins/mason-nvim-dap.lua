@@ -17,6 +17,7 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         'stylelua',
+        'debugpy',
       },
     },
     -- mason-nvim-dap is loaded when nvim-dap loads
