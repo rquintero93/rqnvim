@@ -29,17 +29,17 @@ return {
       -- Iron doesn't set keymaps by default anymore.
       -- You can set them here or manually add keymaps to the functions in iron.core
       keymaps = {
-        send_motion = '<space>sc',
-        visual_send = '<space>ss',
-        send_file = '<space>sf',
-        send_line = '<space>sl',
-        send_mark = '<space>sm',
-        mark_motion = '<space>mc',
-        mark_visual = '<space>mc',
-        remove_mark = '<space>md',
-        cr = '<space>s<cr>',
-        interrupt = '<space>s<space>',
-        exit = '<space>sq',
+        -- send_motion = '<space>rc',
+        visual_send = '<space>rss',
+        send_file = '<space>rsf',
+        send_line = '<space>rsl',
+        -- send_mark = '<space>rm',
+        -- mark_motion = '<space>mc',
+        -- mark_visual = '<space>mc',
+        -- remove_mark = '<space>md',
+        -- cr = '<space>r<cr>',
+        interrupt = '<space>ri',
+        -- exit = '<space>rq',
         clear = '<space>rl',
       },
       -- If the highlight is on, you can change how it looks
@@ -51,9 +51,8 @@ return {
     }
 
     -- iron also has a list of commands, see :h iron-commands for all available commands
-    vim.keymap.set('n', '<space>rs', '<cmd>IronRepl<cr>')
-    vim.keymap.set('n', '<space>rr', '<cmd>IronRestart<cr>')
-    vim.keymap.set('n', '<space>rf', '<cmd>IronFocus<cr>')
-    vim.keymap.set('n', '<space>rh', '<cmd>IronHide<cr>')
+    vim.keymap.set('n', '<space>rb', '<cmd>IronRepl<cr>', { desc = '[R]EPL [B]egin' })
+    vim.keymap.set('n', '<space>rr', '<cmd>IronRestart<cr>', { desc = '[R]EPL [R]estart' })
+    vim.keymap.set('n', '<space>rh', '<cmd>IronHide<cr>', { desc = '[R]EPL [H]ide' })
   end,
 }

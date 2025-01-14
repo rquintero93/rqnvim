@@ -72,9 +72,10 @@ map('n', '<leader>n', '<Cmd>enew<CR>', { desc = 'New Buffer', noremap = true, si
 map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
 map('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', opts)
 
---telescope find marks
-map('n', '<leader>fm', '<cmd>Telescope marks<CR>', { desc = '[f]ind [m]arks' })
-
+--telescope
+map('n', '<leader>fm', '<cmd>Telescope marks<CR>', { desc = '[F]ind [M]arks' })
+vim.keymap.set('n', '<Leader>fs', '<cmd>Telescope symbols<cr>', { desc = '[F]ind [S]ymbols' })
+vim.keymap.set('n', '<Leader>fy', '<cmd>Telescope neoclip<cr>', { desc = '[F]ind [Y]anks' })
 --database ui keymaps
 function Close_snacks_dashboard_and_toggle_dbui()
   -- Iterate over all buffers to find the snacks.nvim dashboard
@@ -92,8 +93,6 @@ end
 
 -- Map the function to a key combination, e.g., <leader>db
 vim.api.nvim_set_keymap('n', '<leader>db', ':lua Close_snacks_dashboard_and_toggle_dbui()<CR>', { desc = 'Toggle DB', noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>db', ':DBUIToggle<CR>', { noremap = true, silent = true })
-
 vim.api.nvim_set_keymap('n', '<Leader>df', ':DBUIFindBuffer<CR>', { noremap = true, silent = true })
 
 -- iron also has a list of commands, see :h iron-commands for all available commands
@@ -105,9 +104,6 @@ vim.keymap.set('n', '<Leader>rh', '<cmd>IronHide<cr>')
 vim.keymap.set('n', '<Leader>gg', '<cmd>LazyGit<cr>')
 
 vim.keymap.set('n', '<Leader>cp', '<cmd>CopilotChatToggle<cr>')
-
-vim.keymap.set('n', '<Leader>fs', '<cmd>Telescope symbols<cr>', { desc = '[f]ind [s]ymbols' })
-vim.keymap.set('n', '<Leader>fy', '<cmd>Telescope neoclip<cr>', { desc = '[f]ind [y]anks' })
 
 function Open_in_visidata()
   -- Write the current buffer to a temporary file
@@ -135,11 +131,11 @@ vim.keymap.set('n', '<A-h>', '<cmd>ToggleTerm direction=horizontal<cr>', { desc 
 vim.keymap.set('n', '<A-v>', '<cmd>ToggleTerm direction=vertical<cr>', { desc = 'toggle vertical terminal' })
 
 -- Lspaga code action
-vim.keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<cr>', { desc = 'Lsp [c]ode [a]ction' })
+vim.keymap.set('n', '<leader>la', '<cmd>Lspsaga code_action<cr>', { desc = 'Code [A]ction' })
 
 -- Neogen annotation keymap
 
-vim.api.nvim_set_keymap('n', '<Leader>cn', ":lua require('neogen').generate()<CR>", { desc = '[c]ode a[n]otation' })
+vim.api.nvim_set_keymap('n', '<Leader>ln', ":lua require('neogen').generate()<CR>", { desc = 'Code a[N]otation' })
 
 -- dial increment keymaps
 vim.keymap.set('n', '<C-a>', function()
@@ -177,6 +173,8 @@ vim.keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current spli
 -- vim.keymap.set('n', '<leader>tn', '<cmd>tabn<CR>', { desc = 'Go to next tab' }) --  go to next tab
 -- vim.keymap.set('n', '<leader>tp', '<cmd>tabp<CR>', { desc = 'Go to previous tab' }) --  go to previous tab
 -- vim.keymap.set('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new tab' }) --  move current buffer to new tab
+
+-- vim.keymap.set.('n','<leader>u', "<cmd>lua require('undotree').toggle()<cr>", { desc = 'toggle undotree' } )
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
