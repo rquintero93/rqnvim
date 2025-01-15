@@ -26,7 +26,7 @@ return {
       sections = {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = { 'filename' },
+        lualine_c = { { 'filename', path = 1 } },
         lualine_x = { 'encoding', 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
@@ -40,7 +40,7 @@ return {
         lualine_z = {},
       },
       tabline = {
-        lualine_a = { { 'buffers', mode = 2, use_mode_colors = true } },
+        lualine_a = { { 'buffers', mode = 2, use_mode_colors = true, hide_filename_extension = true } },
         lualine_b = {},
         lualine_c = {},
         lualine_x = {},
