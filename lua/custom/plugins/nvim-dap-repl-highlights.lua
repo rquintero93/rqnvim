@@ -1,6 +1,6 @@
 return {
   'LiadOz/nvim-dap-repl-highlights',
-  event = { 'BufNewFile', 'BufRead' },
+  ft = { 'python' },
   dependencies = {
     'rcarriga/nvim-dap-ui',
   },

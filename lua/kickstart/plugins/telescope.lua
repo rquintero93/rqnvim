@@ -7,7 +7,6 @@ return {
       'nvim-lua/plenary.nvim',
       { -- If encountering errors, see telescope-fzf-native README for installation instructions
         'nvim-telescope/telescope-fzf-native.nvim',
-        -- 'nvim-telescope/telescope-dap.nvim',
 
         -- `build` is used to run some command when the plugin is installed/updated.
         -- This is only run then, not every time Neovim starts up.
@@ -54,7 +53,7 @@ return {
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
-      pcall(require('telescope').load_extension, 'dap')
+      -- pcall(require('telescope').load_extension, 'dap')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
@@ -68,8 +67,8 @@ return {
       -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
-      vim.keymap.set('n', '<leader>fb', require('telescope').extensions.dap.list_breakpoints, { desc = '[F]ind [B]reakpoints' })
-      vim.keymap.set('n', '<leader>fc', require('telescope').extensions.dap.commands, { desc = '[F]ind [C]ommands ' })
+      -- vim.keymap.set('n', '<leader>fb', require('telescope').extensions.dap.list_breakpoints, { desc = '[F]ind [B]reakpoints' })
+      -- vim.keymap.set('n', '<leader>fc', require('telescope').extensions.dap.commands, { desc = '[F]ind [C]ommands ' })
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
