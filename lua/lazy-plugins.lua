@@ -22,8 +22,6 @@ require('lazy').setup({
 
   require 'kickstart/plugins/treesitter',
 
-  require 'kickstart.plugins.indent_line',
-
   require 'kickstart.plugins.autopairs',
 
   require 'kickstart.plugins.neo-tree',

@@ -12,6 +12,7 @@ return {
       require('mini.ai').setup { n_lines = 500 }
 
       require('mini.icons').setup {}
+      require('mini.indentscope').setup {}
     end,
 
     -- ... and there is more!
