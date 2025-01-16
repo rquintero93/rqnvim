@@ -23,7 +23,7 @@ return {
           return vim.bo[buf].buftype == 'help'
         end,
       },
-      { title = 'DB Query Result', ft = 'dbout', size = { height = 0.3 } },
+      { title = 'DB Query Result', ft = 'dbout', size = { height = 0.4 } },
     },
     left = {
       -- Neo-tree filesystem always takes half the screen height
@@ -41,7 +41,7 @@ return {
         title = 'Database',
         ft = 'dbui',
         pinned = false,
-        width = 0.3,
+        width = 0.5,
         open = function()
           vim.cmd 'DBUI'
         end,
