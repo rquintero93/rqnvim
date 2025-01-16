@@ -14,6 +14,7 @@ return {
       require('mini.icons').setup {}
       require('mini.indentscope').setup {}
       require('mini.bufremove').setup {}
+      require('mini.bracketed').setup {}
     end,
 
     -- ... and there is more!
