@@ -110,6 +110,11 @@ vim.keymap.set('n', '<A-v>', '<cmd>ToggleTerm direction=vertical<cr>', { desc = 
 -- Lspaga code action
 vim.keymap.set('n', '<leader>la', '<cmd>Lspsaga code_action<cr>', { desc = 'Code [A]ction' })
 
+-- glance lsp commands
+vim.keymap.set('n', 'gD', '<CMD>Glance definitions<CR>')
+vim.keymap.set('n', 'gR', '<CMD>Glance references<CR>')
+vim.keymap.set('n', 'gY', '<CMD>Glance type_definitions<CR>')
+vim.keymap.set('n', 'gM', '<CMD>Glance implementations<CR>')
 -- Neogen annotation keymap
 
 vim.api.nvim_set_keymap('n', '<Leader>ln', ":lua require('neogen').generate()<CR>", { desc = 'Code a[N]otation' })

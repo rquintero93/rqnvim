@@ -27,7 +27,7 @@ return {
         lualine_a = { 'mode', { require('NeoComposer.ui').status_recording } },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = { { 'filename', path = 1 } },
-        lualine_x = { 'encoding', 'filetype' },
+        lualine_x = { { require('action-hints').statusline }, 'encoding', 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
       },
