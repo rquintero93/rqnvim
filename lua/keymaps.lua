@@ -36,9 +36,7 @@ map('n', '<S-tab>', '<Cmd>bprevious<CR>', { desc = 'Previous Buffer', noremap = 
 map('n', '<tab>', '<Cmd>bnext<CR>', { desc = 'Next Buffer', noremap = true, silent = true })
 
 -- Close buffer
-map('n', '<leader>x', '<Cmd>bd<CR>', { desc = 'Close Buffer', noremap = true, silent = true })
-map('n', '<leader>X', '<Cmd>bd!<CR>', { desc = 'Close Buffer (No Save)', noremap = true, silent = true })
--- Open new buffer
+map('n', '<leader>x', ':lua require("mini.bufremove").delete() <CR>', { desc = 'Close Buffer', noremap = true, silent = true })
 map('n', '<leader>n', '<Cmd>enew<CR>', { desc = 'New Buffer', noremap = true, silent = true })
 
 --telescope
