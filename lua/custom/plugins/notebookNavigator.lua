@@ -20,7 +20,7 @@ return {
   dependencies = {
     'echasnovski/mini.comment',
     'hkupty/iron.nvim', -- repl provider
-    'anuvyklack/hydra.nvim',
+    'nvimtools/hydra.nvim',
   },
   -- event = { 'BufReadPre', 'BufNewFile' },
   config = function()
