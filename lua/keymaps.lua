@@ -103,9 +103,9 @@ end
 
 vim.cmd 'autocmd! TermOpen term://* lua set_terminal_keymaps()'
 
-vim.keymap.set('n', '<A-f>', '<cmd>ToggleTerm direction=float<cr>', { desc = 'toggle floating terminal' })
-vim.keymap.set('n', '<A-h>', '<cmd>ToggleTerm direction=horizontal<cr>', { desc = 'toggle horizontal terminal' })
-vim.keymap.set('n', '<A-v>', '<cmd>ToggleTerm direction=vertical<cr>', { desc = 'toggle vertical terminal' })
+vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', { desc = 'toggle floating terminal' })
+vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<cr>', { desc = 'toggle horizontal terminal' })
+vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<cr>', { desc = 'toggle vertical terminal' })
 
 -- Lspaga code action
 vim.keymap.set('n', '<leader>la', '<cmd>Lspsaga code_action<cr>', { desc = 'Code [A]ction' })
@@ -156,6 +156,16 @@ vim.keymap.set('n', '<leader>wtx', '<cmd>tabclose<CR>', { desc = 'Close current 
 vim.keymap.set('n', '<leader>wtn', '<cmd>tabn<CR>', { desc = 'Go to next tab' }) --  go to next tab
 vim.keymap.set('n', '<leader>wtp', '<cmd>tabp<CR>', { desc = 'Go to previous tab' }) --  go to previous tab
 vim.keymap.set('n', '<leader>wtf', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new tab' }) --  move current buffer to new tab
+
+-- Lsp select command
+vim.keymap.set('n', '<leader>ls', ':lua require("tsht").nodes()<CR>', { desc = '[L]sp [S]elect' })
+
+-- vim.keymap.set('n', 's', function()
+--   require('substitute').operator
+-- end)
+-- vim.keymap.set('n', 'ss', require('substitute').line, { noremap = true })
+-- vim.keymap.set('n', 'S', require('substitute').eol, { noremap = true })
+-- vim.keymap.set('x', 's', require('substitute').visual, { noremap = true })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
