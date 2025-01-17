@@ -15,8 +15,8 @@ return {
       require('mini.indentscope').setup {}
       require('mini.bufremove').setup {}
       require('mini.bracketed').setup {}
+      require('mini.move').setup {}
     end,
-
     -- ... and there is more!
     --  Check out: https://github.com/echasnovski/mini.nvim
   },
