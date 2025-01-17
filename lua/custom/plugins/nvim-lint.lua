@@ -8,6 +8,8 @@ return {
       linters_by_ft = {
         python = { 'ruff' },
         sql = { 'sqlfluff' },
+        javascript = { 'eslint_d' },
+        typescript = { 'eslint_d' },
         -- lua = { 'selene' },
         -- Use the "*" filetype to run linters on all filetypes.
         -- ['*'] = { 'global linter' },

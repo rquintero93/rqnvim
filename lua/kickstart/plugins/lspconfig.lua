@@ -160,6 +160,7 @@ return {
         -- gopls = {},
         -- pyright = {},
         sqlls = {},
+        jsonls = {},
         jedi_language_server = { diagnostics = { enable = false }, hover = { enable = false }, jediSettings = { autoImportModules = { 'numpy', 'pandas' } } },
         html = {},
         cssls = {},
@@ -177,7 +178,7 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {},
         --
 
         lua_ls = {
@@ -217,11 +218,14 @@ return {
         'sqlfmt',
         'black',
         'isort',
+        'jsonls',
         'ruff',
         'taplo',
         'yamlls',
         'jedi-language-server',
         'sqlfluff',
+        'typescript-language-server',
+        'eslint-d',
         'selene',
         'markdownlint',
         'debugpy',
