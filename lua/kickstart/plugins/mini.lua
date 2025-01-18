@@ -12,7 +12,7 @@ return {
       require('mini.ai').setup { n_lines = 500 }
 
       require('mini.icons').setup {}
-      require('mini.indentscope').setup {}
+      require('mini.indentscope').setup { symbol = '|' }
       require('mini.bufremove').setup {}
       require('mini.bracketed').setup {}
       require('mini.move').setup {}
