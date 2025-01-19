@@ -11,11 +11,11 @@ return {
         scratch_repl = true,
         -- Your repl definitions come here
         repl_definition = {
-          sh = {
-            -- Can be a table or a function that
-            -- returns a table (see below)
-            command = { 'zsh' },
-          },
+          -- sh = {
+          --   -- Can be a table or a function that
+          --   -- returns a table (see below)
+          --   command = { 'zsh' },
+          -- },
           python = {
             command = { 'ipython', '--no-autoindent' },
             format = require('iron.fts.common').bracketed_paste_python,
