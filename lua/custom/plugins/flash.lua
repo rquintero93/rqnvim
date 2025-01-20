@@ -32,6 +32,10 @@ return {
         'cmp_menu',
         'noice',
         'flash_prompt',
+        'neo-tree',
+        'snacks_dashboard',
+        'dbout',
+        'dbui',
         function(win)
           -- exclude non-focusable windows
           return not vim.api.nvim_win_get_config(win).focusable
@@ -56,9 +60,9 @@ return {
       -- add pattern to search register
       register = false,
       -- clear highlight after jump
-      nohlsearch = false,
+      nohlsearch = true,
       -- automatically jump when there is only one match
-      autojump = false,
+      autojump = true,
       -- You can force inclusive/exclusive jumps by setting the
       -- `inclusive` option. By default it will be automatically
       -- set based on the mode.
@@ -202,7 +206,7 @@ return {
           register = false,
           -- when using jump labels, set to 'true' to automatically jump
           -- or execute a motion when there is only one match
-          autojump = false,
+          autojump = true,
         },
       },
       -- options used for treesitter selections
