@@ -111,10 +111,10 @@ vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<cr>', { de
 -- vim.keymap.set('n', '<leader>la', '<cmd>Lspsaga code_action<cr>', { desc = 'Code [A]ction' })
 
 -- glance lsp commands
-vim.keymap.set('n', 'gD', '<CMD>Glance definitions<CR>')
-vim.keymap.set('n', 'gR', '<CMD>Glance references<CR>')
-vim.keymap.set('n', 'gY', '<CMD>Glance type_definitions<CR>')
-vim.keymap.set('n', 'gM', '<CMD>Glance implementations<CR>')
+vim.keymap.set('n', '<leader>lgd', '<CMD>Glance definitions<CR>')
+vim.keymap.set('n', '<leader>lgr', '<CMD>Glance references<CR>')
+vim.keymap.set('n', '<leader>lgy', '<CMD>Glance type_definitions<CR>')
+vim.keymap.set('n', '<leader>lgm', '<CMD>Glance implementations<CR>')
 -- Neogen annotation keymap
 
 vim.api.nvim_set_keymap('n', '<Leader>ln', ":lua require('neogen').generate()<CR>", { desc = 'Code a[N]otation' })

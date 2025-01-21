@@ -57,10 +57,11 @@ return {
           },
         },
       }
+      require('mini.bracketed').setup {}
+      require('mini.bufremove').setup {}
+      -- require('mini.files').setup {}
       require('mini.icons').setup {}
       require('mini.indentscope').setup { symbol = '|' }
-      require('mini.bufremove').setup {}
-      require('mini.bracketed').setup {}
       require('mini.move').setup {}
       require('mini.surround').setup {}
     end,

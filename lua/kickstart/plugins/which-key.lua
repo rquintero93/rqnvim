@@ -70,6 +70,7 @@ return {
         { '<leader>rsl', group = '[R]EPL [S]end [L]ine' },
         { '<leader>rss', group = '[R]EPL [S]end [S]election', mode = { 'v' } },
         { '<leader>l', group = '[L]SP' },
+        { '<leader>lg', group = '[L]SP [G]lance' },
         { '<leader>w', group = '[W]indows & Tabs' },
         { '<leader>ws', group = '[S]plits' },
         { '<leader>wt', group = '[T]abs ' },
