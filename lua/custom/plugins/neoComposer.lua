@@ -2,5 +2,5 @@ return {
   'ecthelionvi/NeoComposer.nvim',
   dependencies = { 'kkharji/sqlite.lua' },
   event = { 'BufNewFile', 'BufRead' },
-  opts = {},
+  opts = { queue_most_recent = true },
 }
