@@ -94,7 +94,7 @@ vim.api.nvim_set_keymap('n', '<leader>vd', '<cmd>lua Open_in_visidata()<CR>', { 
 -- Toggleterm keymaps
 function _G.set_terminal_keymaps()
   --local opts = { noremap = true }
-  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', '<cmd>ToggleTerm<cr>', opts)
+  -- vim.api.nvim_buf_set_keymap(0, 't', '<esc>', '<cmd>ToggleTerm<cr>', opts)
   vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
@@ -107,43 +107,14 @@ vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', { desc 
 vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<cr>', { desc = 'toggle horizontal terminal' })
 vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<cr>', { desc = 'toggle vertical terminal' })
 
--- Lspaga code action
--- vim.keymap.set('n', '<leader>la', '<cmd>Lspsaga code_action<cr>', { desc = 'Code [A]ction' })
-
 -- glance lsp commands
 vim.keymap.set('n', '<leader>lgd', '<CMD>Glance definitions<CR>')
 vim.keymap.set('n', '<leader>lgr', '<CMD>Glance references<CR>')
 vim.keymap.set('n', '<leader>lgy', '<CMD>Glance type_definitions<CR>')
 vim.keymap.set('n', '<leader>lgm', '<CMD>Glance implementations<CR>')
+
 -- Neogen annotation keymap
-
 vim.api.nvim_set_keymap('n', '<Leader>ln', ":lua require('neogen').generate()<CR>", { desc = 'Code a[N]otation' })
-
--- dial increment keymaps
--- vim.keymap.set('n', '<C-a>', function()
---   require('dial.map').manipulate('increment', 'normal')
--- end)
--- vim.keymap.set('n', '<C-x>', function()
---   require('dial.map').manipulate('decrement', 'normal')
--- end)
--- vim.keymap.set('n', 'g<C-a>', function()
---   require('dial.map').manipulate('increment', 'gnormal')
--- end)
--- vim.keymap.set('n', 'g<C-x>', function()
---   require('dial.map').manipulate('decrement', 'gnormal')
--- end)
--- vim.keymap.set('v', '<C-a>', function()
---   require('dial.map').manipulate('increment', 'visual')
--- end)
--- vim.keymap.set('v', '<C-x>', function()
---   require('dial.map').manipulate('decrement', 'visual')
--- end)
--- vim.keymap.set('v', 'g<C-a>', function()
---   require('dial.map').manipulate('increment', 'gvisual')
--- end)
--- vim.keymap.set('v', 'g<C-x>', function()
---   require('dial.map').manipulate('decrement', 'gvisual')
--- end)
 
 -- window management
 vim.keymap.set('n', '<leader>wsv', '<C-w>v', { desc = 'Split window vertically' }) -- split window vertically
@@ -159,13 +130,6 @@ vim.keymap.set('n', '<leader>wtf', '<cmd>tabnew %<CR>', { desc = 'Open current b
 
 -- Lsp select command
 vim.keymap.set('n', '<leader>ls', ':lua require("tsht").nodes()<CR>', { desc = '[L]sp [S]elect' })
-
--- vim.keymap.set('n', 's', function()
---   require('substitute').operator
--- end)
--- vim.keymap.set('n', 'ss', require('substitute').line, { noremap = true })
--- vim.keymap.set('n', 'S', require('substitute').eol, { noremap = true })
--- vim.keymap.set('x', 's', require('substitute').visual, { noremap = true })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
