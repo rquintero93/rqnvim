@@ -18,8 +18,8 @@ return {
         },
       },
       ignore = { --			  |windows.ignore|
-        buftype = { 'quickfix', 'dbui', 'dbout' },
-        filetype = { 'NvimTree', 'neo-tree', 'undotree', 'gundo', 'snacks_dashboard', 'dbui', 'dbout' },
+        buftype = { 'quickfix' },
+        filetype = { 'NvimTree', 'neo-tree', 'undotree', 'gundo', 'snacks_dashboard' },
       },
       animation = {
         enable = true,

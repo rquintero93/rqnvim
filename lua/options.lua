@@ -90,6 +90,7 @@ vim.opt.termguicolors = true
 vim.opt.laststatus = 3
 vim.opt.splitkeep = 'screen'
 
+vim.g.nvim_ghost_super_quiet = 1
 -- vim.opt.foldmethod = 'indent'
 
 vim.loader.enable()

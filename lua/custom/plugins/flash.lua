@@ -34,7 +34,6 @@ return {
         'flash_prompt',
         'neo-tree',
         'snacks_dashboard',
-        'dbout',
         'dbui',
         function(win)
           -- exclude non-focusable windows
