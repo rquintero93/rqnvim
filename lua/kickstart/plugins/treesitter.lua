@@ -30,6 +30,7 @@ return {
         'regex',
         'ninja',
         'rst',
+        'tmux',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
