@@ -44,7 +44,7 @@ map('n', '<leader>fm', '<cmd>Telescope marks<CR>', { desc = '[F]ind [M]arks' })
 vim.keymap.set('n', '<Leader>fs', '<cmd>Telescope symbols<cr>', { desc = '[F]ind [S]ymbols' })
 vim.keymap.set('n', '<Leader>fy', '<cmd>Telescope neoclip<cr>', { desc = '[F]ind [Y]anks' })
 vim.keymap.set('n', '<Leader>fq', '<cmd>Telescope macros<cr>', { desc = '[F]ind Macros' })
-
+vim.keymap.set('n', '<space>e', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { desc = 'File [E]xplorer' })
 --database ui keymaps
 function Close_snacks_dashboard_and_toggle_dbui()
   -- Iterate over all buffers to find the snacks.nvim dashboard
