@@ -25,28 +25,17 @@ return {
       },
       { title = 'DB Query Result', ft = 'dbout', size = { height = 0.4 } },
     },
-    left = {
-      -- Neo-tree filesystem always takes half the screen height
-      {
-        title = 'File Explorer',
-        ft = 'neo-tree',
-        filter = function(buf)
-          return vim.b[buf].neo_tree_source == 'filesystem'
-        end,
-        -- size = { height = 0.5 },
-      },
-      -- any other neo-tree windows
-      'neo-tree',
-      {
-        title = 'Database',
-        ft = 'dbui',
-        pinned = false,
-        width = 0.5,
-        open = function()
-          vim.cmd 'DBUI'
-        end,
-      },
-    },
+    -- left = {
+    --   {
+    --     title = 'Database',
+    --     ft = 'dbui',
+    --     pinned = false,
+    --     width = 0.7,
+    --     open = function()
+    --       vim.cmd 'DBUI'
+    --     end,
+    --   },
+    -- },
 
     animate = {
       enabled = true,
