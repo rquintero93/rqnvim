@@ -37,7 +37,7 @@ return {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-nvim-lua',
       'kristijanhusak/vim-dadbod-completion',
-      'ray-x/cmp-sql',
+      -- 'ray-x/cmp-sql',
       'rcarriga/cmp-dap',
     },
     config = function()
@@ -112,13 +112,13 @@ return {
             -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
             group_index = 0,
           },
-          { name = 'copilot', priority = 1500 },
-          { name = 'nvim_lsp', priority = 1000 },
+          { name = 'copilot', priority = 1200 },
+          { name = 'nvim_lsp', priority = 1500 },
           { name = 'luasnip', priority = 750 },
-          { name = 'buffer', priority = 500 },
+          { name = 'buffer', priority = 1000 },
           { name = 'path', priority = 250 },
           { name = 'vim-dadbod-completion', priority = 700 },
-          { name = 'sql', priority = 100 },
+          -- { name = 'sql', priority = 100 },
           { name = 'dap', priority = 2000 },
         },
       }
