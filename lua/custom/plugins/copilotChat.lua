@@ -11,5 +11,14 @@ return {
     highlight_headers = false,
     separator = '---',
     error_header = '> [!ERROR] Error',
+    auto_insert_mode = false,
+    context = 'buffers',
+    window = {
+      layout = 'float',
+      relative = 'cursor',
+      width = 1,
+      height = 0.4,
+      row = 1,
+    },
   },
 }
