@@ -62,7 +62,7 @@ end
 
 -- Map the function to a key combination, e.g., <leader>db
 vim.api.nvim_set_keymap('n', '<leader>db', ':lua Close_snacks_dashboard_and_toggle_dbui()<CR>', { desc = 'Toggle DB', noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>df', ':DBUIFindBuffer<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<Leader>df', ':DBUIFindBuffer<CR>', { noremap = true, silent = true })
 
 -- iron also has a list of commands, see :h iron-commands for all available commands
 vim.keymap.set('n', '<Leader>rb', '<cmd>IronRepl<cr>')
@@ -70,7 +70,7 @@ vim.keymap.set('n', '<Leader>rr', '<cmd>IronRestart<cr>')
 vim.keymap.set('n', '<Leader>rf', '<cmd>IronFocus<cr>')
 vim.keymap.set('n', '<Leader>rh', '<cmd>IronHide<cr>')
 
-vim.keymap.set('n', '<Leader>gg', '<cmd>LazyGit<cr>')
+vim.keymap.set('n', '<Leader>gg', '<cmd>lua Snacks.lazygit()<cr>')
 
 vim.keymap.set('n', '<Leader>cc', '<cmd>CopilotChatToggle<cr>', { desc = 'Toggle [C]opilot [C]hat' })
 vim.keymap.set('n', '<Leader>cR', '<cmd>CopilotChatReset<cr>', { desc = '[C]hat [R]eset' })
@@ -116,17 +116,12 @@ vim.keymap.set('n', '<leader>lgm', '<CMD>Glance implementations<CR>')
 -- Neogen annotation keymap
 vim.api.nvim_set_keymap('n', '<Leader>ln', ":lua require('neogen').generate()<CR>", { desc = 'Code a[N]otation' })
 
--- window management
-vim.keymap.set('n', '<leader>wsv', '<C-w>v', { desc = 'Split window vertically' }) -- split window vertically
-vim.keymap.set('n', '<leader>wsh', '<C-w>s', { desc = 'Split window horizontally' }) -- split window horizontally
-vim.keymap.set('n', '<leader>wse', '<C-w>=', { desc = 'Make splits equal size' }) -- make split windows equal width & height
-vim.keymap.set('n', '<leader>wsx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
 -- tab management
-vim.keymap.set('n', '<leader>wto', '<cmd>tabnew<CR>', { desc = 'Open new tab' }) -- open new tab
-vim.keymap.set('n', '<leader>wtx', '<cmd>tabclose<CR>', { desc = 'Close current tab' }) -- close current tab
-vim.keymap.set('n', '<leader>wtn', '<cmd>tabn<CR>', { desc = 'Go to next tab' }) --  go to next tab
-vim.keymap.set('n', '<leader>wtp', '<cmd>tabp<CR>', { desc = 'Go to previous tab' }) --  go to previous tab
-vim.keymap.set('n', '<leader>wtf', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new tab' }) --  move current buffer to new tab
+vim.keymap.set('n', '<leader>wn', '<cmd>tabnew<CR>', { desc = 'Open new tab' }) -- open new tab
+vim.keymap.set('n', '<leader>wx', '<cmd>tabclose<CR>', { desc = 'Close current tab' }) -- close current tab
+vim.keymap.set('n', '<leader>w]', '<cmd>tabn<CR>', { desc = 'Go to next tab' }) --  go to next tab
+vim.keymap.set('n', '<leader>w[', '<cmd>tabp<CR>', { desc = 'Go to previous tab' }) --  go to previous tab
+vim.keymap.set('n', '<leader>wf', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new tab' }) --  move current buffer to new tab
 
 -- Lsp select command
 vim.keymap.set('n', '<leader>ls', ':lua require("tsht").nodes()<CR>', { desc = '[L]sp [S]elect' })

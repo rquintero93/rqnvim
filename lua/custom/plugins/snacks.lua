@@ -13,12 +13,15 @@ return {
   ---@field template? string template for new buffers
   ---@class snacks.scratch.Config
   ---@field keep? fun(notif: snacks.notifier.Notif): boolean # global keep function
+  ---@class snacks.lazygit.Config: snacks.terminal.Opts
+  ---@field args? string[]
+  ---@field theme? snacks.lazygit.Theme
   opts = {
     -- your configuration comes here
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
-    -- bigfile = { enabled = true },
-    lazygit = { enabled = false },
+    bigfile = { enabled = true },
+    lazygit = { configure = true },
     animate = {
       enabled = true,
       speed = 100,
