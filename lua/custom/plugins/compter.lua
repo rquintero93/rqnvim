@@ -85,6 +85,52 @@ return {
               end
             end,
           },
+          -- for date format: mm/dd/YYYY
+          {
+            pattern = [[\d\{2}/\d\{2}/\d\{4}]],
+            priority = 100,
+            increase = function(content)
+              local ts = vim.fn.strptime('%m/%d/%Y', content)
+              if ts == 0 then
+                return content, false
+              else
+                ts = ts + 24 * 60 * 60
+                return vim.fn.strftime('%m/%d/%Y', ts), true
+              end
+            end,
+            decrease = function(content)
+              local ts = vim.fn.strptime('%m/%d/%Y', content)
+              if ts == 0 then
+                return content, false
+              else
+                ts = ts - 24 * 60 * 60
+                return vim.fn.strftime('%m/%d/%Y', ts), true
+              end
+            end,
+          },
+          -- for date format: YYYY-mm-dd
+          {
+            pattern = [[\d\{4}-\d\{2}-\d\{2}]],
+            priority = 100,
+            increase = function(content)
+              local ts = vim.fn.strptime('%Y-%m-%d', content)
+              if ts == 0 then
+                return content, false
+              else
+                ts = ts + 24 * 60 * 60
+                return vim.fn.strftime('%Y-%m-%d', ts), true
+              end
+            end,
+            decrease = function(content)
+              local ts = vim.fn.strptime('%Y-%m-%d', content)
+              if ts == 0 then
+                return content, false
+              else
+                ts = ts - 24 * 60 * 60
+                return vim.fn.strftime('%Y-%m-%d', ts), true
+              end
+            end,
+          },
           -- for boolean
           {
             pattern = [[\<\(true\|false\|TRUE\|FALSE\|True\|False\)\>]],
