@@ -7,8 +7,8 @@ return {
       options = {
         icons_enabled = true,
         theme = 'auto',
-        component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
         disabled_filetypes = {
           winbar = {},
           statusline = { 'snacks_dashboard' },
@@ -49,7 +49,7 @@ return {
       },
       winbar = {},
       inactive_winbar = {},
-      extensions = { 'lazy', 'neo-tree', 'nvim-dap-ui', 'quickfix', 'toggleterm', 'trouble', 'fzf', 'mason' },
+      extensions = { 'lazy', 'nvim-dap-ui', 'quickfix', 'toggleterm', 'trouble', 'fzf', 'mason' },
     }
   end,
 }
