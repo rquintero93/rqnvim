@@ -11,6 +11,7 @@ return {
       require('mini.indentscope').setup { symbol = '|' }
       require('mini.move').setup {}
       require('mini.surround').setup {}
+      require('mini.comment').setup {}
     end,
     -- ... and there is more!
     --  Check out: https://github.com/echasnovski/mini.nvim
