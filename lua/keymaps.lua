@@ -209,4 +209,13 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
     vim.cmd 'CsvViewEnable'
   end,
 })
+--
+
+-- adds commentstring to sql filetype
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+  pattern = { 'sql' },
+  callback = function()
+    vim.bo.commentstring = '-- %s'
+  end,
+})
 -- vim: ts=2 sts=2 sw=2 et
