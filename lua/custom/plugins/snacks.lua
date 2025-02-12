@@ -126,11 +126,14 @@ return {
       --   end,
       -- },
       sections = {
-        { section = 'header' },
-        { section = 'keys', gap = 1, padding = 2 },
-        { icon = ' ', title = 'Recent Files', section = 'recent_files', indent = 2, padding = 2 },
-        { icon = ' ', title = 'Projects', section = 'projects', indent = 2, padding = 2 },
-        { section = 'startup' },
+        { section = 'header', padding = 2 },
+        {
+          pane = 2,
+          { section = 'keys', gap = 2, padding = 5 },
+          { icon = ' ', title = 'Recent Files', section = 'recent_files', gap = 1, indent = 3, padding = 2 },
+          { icon = ' ', title = 'Projects', section = 'projects', gap = 1, indent = 3, padding = 2 },
+          { section = 'startup' },
+        },
       },
     },
     notifier = {
