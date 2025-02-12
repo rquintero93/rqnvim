@@ -21,8 +21,21 @@ return {
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
     bigfile = {},
+    scroll = {
+      animate = {
+        duration = { step = 10, total = 100 },
+        easing = 'linear',
+      },
+      -- faster animation when repeating scroll after delay
+      animate_repeat = {
+        delay = 50, -- delay in ms before using the repeat animation
+        duration = { step = 5, total = 50 },
+        easing = 'linear',
+      },
+    },
     lazygit = { configure = true },
     animate = {},
+    image = {},
     dashboard = {
       width = 95,
       row = 3, -- dashboard position. nil for center
@@ -217,21 +230,5 @@ return {
     --   end,
     --   desc = 'Dismiss All Notifications',
     -- },
-    {
-      ']]',
-      function()
-        Snacks.words.jump(vim.v.count1)
-      end,
-      desc = 'Next Reference',
-      mode = { 'n', 't' },
-    },
-    {
-      '[[',
-      function()
-        Snacks.words.jump(-vim.v.count1)
-      end,
-      desc = 'Prev Reference',
-      mode = { 'n', 't' },
-    },
   },
 }
