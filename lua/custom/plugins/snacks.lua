@@ -38,7 +38,7 @@ return {
     image = {},
     dashboard = {
       width = 95,
-      row = 3, -- dashboard position. nil for center
+      row = 2, -- dashboard position. nil for center
       col = nil, -- dashboard position. nil for center
       pane_gap = 4, -- empty columns between vertical panes
       autokeys = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', -- autokey sequence
@@ -142,7 +142,7 @@ return {
         { section = 'header', padding = 2 },
         {
           pane = 2,
-          { section = 'keys', gap = 2, padding = 4 },
+          { section = 'keys', gap = 2, padding = 3 },
           { icon = ' ', title = 'Recent Files', section = 'recent_files', gap = 1, indent = 1, padding = 1 },
           { icon = ' ', title = 'Projects', section = 'projects', gap = 1, indent = 1, padding = 1 },
           { section = 'startup', gap = 1, padding = 2 },
