@@ -121,6 +121,13 @@ return {
           { name = 'vim-dadbod-completion', priority = 700 },
           -- { name = 'sql', priority = 100 },
           { name = 'dap', priority = 2000 },
+          { name = 'minuet', priority = 1100 },
+        },
+        performance = {
+          -- It is recommended to increase the timeout duration due to
+          -- the typically slower response speed of LLMs compared to
+          -- other completion sources.
+          fetching_timeout = 2000,
         },
         formatting = {
           format = function(entry, vim_item)
