@@ -1,6 +1,7 @@
 return {
   {
     'milanglacier/minuet-ai.nvim',
+    event = 'InsertEnter',
     config = function()
       require('minuet').setup {
         provider_options = {
