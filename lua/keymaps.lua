@@ -173,6 +173,7 @@ vim.api.nvim_create_autocmd('FileType', {
     'qf',
     'spectre_panel',
     'startuptime',
+    'json',
     'tsplayground',
   },
   callback = function(event)
@@ -213,7 +214,7 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
 
 -- adds commentstring to sql filetype
 vim.api.nvim_create_autocmd({ 'FileType' }, {
-  pattern = { 'sql' },
+  pattern = { 'sql', 'bqsql' },
   callback = function()
     vim.bo.commentstring = '-- %s'
   end,
