@@ -2,8 +2,8 @@
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'clear search highlight' })
 -- incre2ment/decrement numbers
-vim.keymap.set('n', '<leader>=', ':lua require("compter").increase()<CR>', { desc = 'Increment number', remap = true, silent = true }) -- increment
-vim.keymap.set('n', '<leader>-', ':lua require("compter").decrease()<CR>', { desc = 'Decrement number', remap = true, silent = true }) -- decrement
+vim.keymap.set('n', '<leader>=', ':lua require("compter").increase()<CR>', { desc = '+ number', remap = true, silent = true }) -- increment
+vim.keymap.set('n', '<leader>-', ':lua require("compter").decrease()<CR>', { desc = '- number', remap = true, silent = true }) -- decrement
 -- Diagnostic keymaps
 -- vom.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -63,16 +63,16 @@ function Close_snacks_dashboard_and_toggle_dbui()
 end
 
 -- Map the function to a key combination, e.g., <leader>db
-vim.api.nvim_set_keymap('n', '<leader>db', ':lua Close_snacks_dashboard_and_toggle_dbui()<CR>', { desc = 'Toggle DB', noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>db', ':lua Close_snacks_dashboard_and_toggle_dbui()<CR>', { desc = 'Toggle [DB]', noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<Leader>df', ':DBUIFindBuffer<CR>', { noremap = true, silent = true })
 
 -- iron also has a list of commands, see :h iron-commands for all available commands
-vim.keymap.set('n', '<Leader>rb', '<cmd>IronRepl<cr>')
-vim.keymap.set('n', '<Leader>rr', '<cmd>IronRestart<cr>')
-vim.keymap.set('n', '<Leader>rf', '<cmd>IronFocus<cr>')
-vim.keymap.set('n', '<Leader>rh', '<cmd>IronHide<cr>')
+vim.keymap.set('n', '<Leader>rb', '<cmd>IronRepl<cr>', { desc = '[R]epl [B]egin' })
+vim.keymap.set('n', '<Leader>rr', '<cmd>IronRestart<cr>', { desc = '[R]epl [R]estart' })
+vim.keymap.set('n', '<Leader>rf', '<cmd>IronFocus<cr>', { desc = '[R]epl [F]ocus' })
+vim.keymap.set('n', '<Leader>rh', '<cmd>IronHide<cr>', { desc = '[R]epl [H]ide' })
 
-vim.keymap.set('n', '<Leader>gg', '<cmd>lua Snacks.lazygit()<cr>')
+vim.keymap.set('n', '<Leader>gg', '<cmd>lua Snacks.lazygit()<cr>', { desc = '[G]it [G]raph' })
 
 vim.keymap.set('n', '<Leader>cc', '<cmd>CopilotChatToggle<cr>', { desc = 'Toggle [C]opilot [C]hat' })
 vim.keymap.set('n', '<Leader>cR', '<cmd>CopilotChatReset<cr>', { desc = '[C]hat [R]eset' })
@@ -105,18 +105,18 @@ end
 
 vim.cmd 'autocmd! TermOpen term://* lua set_terminal_keymaps()'
 
-vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', { desc = 'toggle floating terminal' })
-vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<cr>', { desc = 'toggle horizontal terminal' })
-vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<cr>', { desc = 'toggle vertical terminal' })
+vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', { desc = '[T]oggle [F]loating terminal' })
+vim.keymap.set('n', '<leader>ts', '<cmd>ToggleTerm direction=horizontal<cr>', { desc = '[T]oggle [S]plit terminal' })
+vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<cr>', { desc = '[T]oggle [V]ertical terminal' })
 
 -- glance lsp commands
-vim.keymap.set('n', '<leader>lgd', '<CMD>Glance definitions<CR>')
-vim.keymap.set('n', '<leader>lgr', '<CMD>Glance references<CR>')
-vim.keymap.set('n', '<leader>lgy', '<CMD>Glance type_definitions<CR>')
-vim.keymap.set('n', '<leader>lgm', '<CMD>Glance implementations<CR>')
+vim.keymap.set('n', '<leader>lgd', '<CMD>Glance definitions<CR>', { desc = '[G]lance [D]efinitions' })
+vim.keymap.set('n', '<leader>lgr', '<CMD>Glance references<CR>', { desc = '[G]lance [R]eferences' })
+vim.keymap.set('n', '<leader>lgy', '<CMD>Glance type_definitions<CR>', { desc = '[G]lance t[Y]pe definitions' })
+vim.keymap.set('n', '<leader>lgm', '<CMD>Glance implementations<CR>', { desc = '[G]lance i[M]plementations' })
 
 -- Neogen annotation keymap
-vim.api.nvim_set_keymap('n', '<Leader>ln', ":lua require('neogen').generate()<CR>", { desc = 'Code a[N]otation' })
+vim.api.nvim_set_keymap('n', '<Leader>ln', ":lua require('neogen').generate()<CR>", { desc = '[L]sp a[N]otation' })
 
 -- tab management
 vim.keymap.set('n', '<leader>wn', '<cmd>tabnew<CR>', { desc = 'Open new tab' }) -- open new tab

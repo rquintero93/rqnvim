@@ -3,7 +3,7 @@ return {
   dependencies = { 'nvim-neotest/nvim-nio', { 'theHamsta/nvim-dap-virtual-text', opts = {} } },
   -- stylua: ignore
   keys = {
-    { "<leader>bu", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
+    { "<leader>bu", function() require("dapui").toggle({ }) end, desc = "de[B]ugger [U]I" },
     -- { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
   },
   opts = {},

@@ -8,7 +8,7 @@ return {
       '<leader>e',
       mode = { 'n', 'v' },
       '<cmd>Yazi<cr>',
-      desc = 'Open yazi at the current file',
+      desc = 'File [E]xplorer',
     },
     -- {
     --   -- Open in the current working directory

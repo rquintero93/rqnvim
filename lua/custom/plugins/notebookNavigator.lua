@@ -14,8 +14,8 @@ return {
         require('notebook-navigator').move_cell 'u'
       end,
     },
-    { '<leader>jr', "<cmd>lua require('notebook-navigator').run_cell()<cr>", { desc = 'run cell' } },
-    { '<leader>jj', "<cmd>lua require('notebook-navigator').run_and_move()<cr>", { desc = 'run cell and move' } },
+    { '<leader>jr', "<cmd>lua require('notebook-navigator').run_cell()<cr>", { desc = '[J]upyter [R]un cell' } },
+    { '<leader>jj', "<cmd>lua require('notebook-navigator').run_and_move()<cr>", { desc = '[J]upyter run and [J]ump' } },
   },
   dependencies = {
     'echasnovski/mini.comment',
