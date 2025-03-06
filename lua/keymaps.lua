@@ -128,6 +128,11 @@ vim.keymap.set('n', '<leader>wf', '<cmd>tabnew %<CR>', { desc = 'Open current bu
 -- Lsp select command
 vim.keymap.set('n', '<leader>ls', ':lua require("tsht").nodes()<CR>', { desc = '[L]sp [S]elect' })
 
+-- neotest keymaps
+
+vim.keymap.set('n', '<leader>tr', '<cmd>Neotest run<CR>', { desc = 'neo[T]est [R]un' })
+vim.keymap.set('n', '<leader>tR', '<cmd>Neotest run file<CR>', { desc = 'neo[T]est [R]un file' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
