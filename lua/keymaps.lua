@@ -133,6 +133,10 @@ vim.keymap.set('n', '<leader>ls', ':lua require("tsht").nodes()<CR>', { desc = '
 vim.keymap.set('n', '<leader>tr', '<cmd>Neotest run<CR>', { desc = 'neo[T]est [R]un' })
 vim.keymap.set('n', '<leader>tR', '<cmd>Neotest run file<CR>', { desc = 'neo[T]est [R]un file' })
 
+-- nvumi keymaps
+
+vim.keymap.set('n', '<leader>on', '<CMD>Nvumi<CR>', { desc = '[O]pen [N]vumi' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
