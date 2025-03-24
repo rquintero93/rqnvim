@@ -116,7 +116,7 @@ return {
           { name = 'copilot', priority = 1200 },
           { name = 'nvim_lsp', priority = 1500 },
           { name = 'luasnip', priority = 750 },
-          { name = 'buffer', priority = 1000 },
+          { name = 'buffer', priority = 1300 },
           { name = 'path', priority = 250 },
           { name = 'vim-dadbod-completion', priority = 700 },
           -- { name = 'sql', priority = 100 },
