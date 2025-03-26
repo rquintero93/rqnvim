@@ -228,4 +228,12 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
     vim.bo.commentstring = '-- %s'
   end,
 })
+
+-- adds filetype to http files
+vim.filetype.add {
+  extension = {
+    ['http'] = 'http',
+  },
+}
+
 -- vim: ts=2 sts=2 sw=2 et

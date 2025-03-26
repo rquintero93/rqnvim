@@ -32,6 +32,7 @@
   "hydra.nvim": { "branch": "main", "commit": "983852960cd4e4e9a1b272df0bd1447495aae755" },
   "in-and-out.nvim": { "branch": "master", "commit": "ca02f04c0817e7712f0c9bde5016c36b80339413" },
   "iron.nvim": { "branch": "master", "commit": "e2021d242088bc98f7df75bee487a0ae1bfafc5f" },
+  "kulala.nvim": { "branch": "main", "commit": "f9daf1df015aac94350b3f20c26ce43a9e0009be" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lazydev.nvim": { "branch": "main", "commit": "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c" },
   "lspsaga.nvim": { "branch": "main", "commit": "6063935cf68de9aa6dd79f8e1caf5df0a9385de3" },
