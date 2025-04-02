@@ -20,6 +20,6 @@ require 'lazy-bootstrap'
 require 'lazy-plugins'
 
 vim.env.PATH = vim.env.PATH .. '/usr/local/bin'
-vim.env.PATH = vim.env.PATH .. '~/anaconda3/bin/'
+-- vim.env.PATH = vim.env.PATH .. '~/anaconda3/bin/'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
