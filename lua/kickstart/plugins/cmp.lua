@@ -38,7 +38,7 @@ return {
       'hrsh7th/cmp-nvim-lua',
       'kristijanhusak/vim-dadbod-completion',
       -- 'ray-x/cmp-sql',
-      'rcarriga/cmp-dap',
+      -- 'rcarriga/cmp-dap',
       'xzbdmw/colorful-menu.nvim',
     },
     config = function()
@@ -120,7 +120,7 @@ return {
           { name = 'path', priority = 250 },
           { name = 'vim-dadbod-completion', priority = 700 },
           -- { name = 'sql', priority = 100 },
-          { name = 'dap', priority = 2000 },
+          -- { name = 'dap', priority = 2000 },
           { name = 'minuet', priority = 1100 },
         },
         performance = {

@@ -49,7 +49,7 @@ return {
       },
       winbar = {},
       inactive_winbar = {},
-      extensions = { 'lazy', 'nvim-dap-ui', 'quickfix', 'toggleterm', 'trouble', 'fzf', 'mason' },
+      extensions = { 'lazy',  'quickfix', 'toggleterm', 'trouble', 'fzf', 'mason' },
     }
   end,
 }

@@ -49,7 +49,7 @@ return {
           -- ...
           barbar = true, -- barbar.nvim
           cmp = true, -- nvim-cmp
-          dap_ui = true, -- nvim-dap-ui
+          -- dap_ui = true, -- nvim-dap-ui
           gitsigns = true, -- gitsigns.nvim
           telescope = true, -- telescope.nvim
           whichkey = true, -- which-key.nvim
