@@ -27,7 +27,7 @@ return {
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      -- { 'j-hui/fidget.nvim', opts = {} },
 
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
@@ -136,7 +136,7 @@ return {
       --   for type, icon in pairs(signs) do
       --     diagnostic_signs[vim.diagnostic.severity[type]] = icon
       --   end
-      --   vim.diagnostic.config { signs = { text = diagnostic_signs } }
+      vim.diagnostic.config { virtual_text = true }
       -- end
 
       -- LSP servers and clients are able to communicate to each other what features they support.
@@ -161,7 +161,26 @@ return {
         -- pyright = {},
         sqlls = {},
         jsonls = {},
-        jedi_language_server = { diagnostics = { enable = false }, hover = { enable = false }, jediSettings = { autoImportModules = { 'numpy', 'pandas' } } },
+        -- jedi_language_server = { diagnostics = { enable = false }, hover = { enable = false }, jediSettings = { autoImportModules = { 'numpy', 'pandas' } } },
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              analysis = {
+                useLibraryCodeForTypes = true,
+                autoSearchPath = true,
+                -- inlayHints = {
+                --   callArgumentNames = true,
+                --   genericTypes = true,
+                -- },
+              },
+
+              -- python = {
+              --   venvPath = '/path/to/venv',
+              --   venv = 'venv',
+              -- },
+            },
+          },
+        },
         html = {},
         cssls = {},
         -- ruff = {},
@@ -223,6 +242,7 @@ return {
         'taplo',
         'yamlls',
         'jedi-language-server',
+        'basedpyright',
         'sqlfluff',
         'typescript-language-server',
         'eslint-d',

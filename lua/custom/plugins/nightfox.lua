@@ -59,7 +59,6 @@ return {
           lsp_trouble = true, -- lsp-trouble.nvim
           indent_blankline = true, -- indent-blankline.nvim
           mini = true, -- minimap.vim
-          fidget = true, --
           modes = true, -- vim-modes.nvim
           native_lsp = true, -- nvim-lspconfig
           neotree = true, -- neotree
