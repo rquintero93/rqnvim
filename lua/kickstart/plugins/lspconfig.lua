@@ -183,7 +183,7 @@ return {
         },
         html = {},
         cssls = {},
-        -- ruff = {},
+        ruff = { settings = { lint = { enable = false } } },
         taplo = {
           filetypes = { 'toml' },
           -- IMPORTANTE: esto es necesario para que taplo LSP funcione en repositorios que no sean git

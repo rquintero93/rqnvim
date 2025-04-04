@@ -6,7 +6,7 @@ return {
       -- Event to trigger linters
       events = { 'BufWritePost', 'BufReadPost', 'InsertLeave' },
       linters_by_ft = {
-        python = { 'ruff' },
+        -- python = { 'ruff' },
         sql = { 'sqlfluff' },
         javascript = { 'eslint_d' },
         typescript = { 'eslint_d' },
