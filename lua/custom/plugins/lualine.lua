@@ -24,7 +24,21 @@ return {
         },
       },
       sections = {
-        lualine_a = { 'mode', { require('NeoComposer.ui').status_recording } },
+        lualine_a = {
+          'mode',
+          {
+            'macro',
+            fmt = function()
+              local reg = vim.fn.reg_recording()
+              if reg ~= '' then
+                return 'Recording @' .. reg
+              end
+              return nil
+            end,
+            -- color = { fg = '#ff9e64' },
+            draw_empty = false,
+          },
+        },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = {},
         lualine_x = { { require('action-hints').statusline }, 'encoding', 'filetype' },
@@ -49,7 +63,7 @@ return {
       },
       winbar = {},
       inactive_winbar = {},
-      extensions = { 'lazy',  'quickfix', 'toggleterm', 'trouble', 'fzf', 'mason' },
+      extensions = { 'lazy', 'quickfix', 'toggleterm', 'trouble', 'fzf', 'mason' },
     }
   end,
 }

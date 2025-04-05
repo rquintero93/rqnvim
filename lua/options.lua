@@ -82,8 +82,6 @@ vim.opt.termguicolors = true
 vim.opt.laststatus = 3
 vim.opt.splitkeep = 'screen'
 
-vim.g.nvim_ghost_super_quiet = 1
-
 vim.loader.enable()
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -45,7 +45,7 @@ map('n', '<leader>n', '<Cmd>enew<CR>', { desc = 'New Buffer', noremap = true, si
 map('n', '<leader>fm', '<cmd>Telescope marks<CR>', { desc = '[F]ind [M]arks' })
 vim.keymap.set('n', '<Leader>fs', '<cmd>Telescope symbols<cr>', { desc = '[F]ind [S]ymbols' })
 vim.keymap.set('n', '<Leader>fy', '<cmd>Telescope neoclip<cr>', { desc = '[F]ind [Y]anks' })
-vim.keymap.set('n', '<Leader>fq', '<cmd>Telescope macros<cr>', { desc = '[F]ind Macros' })
+-- vim.keymap.set('n', '<Leader>fq', '<cmd>Telescope macros<cr>', { desc = '[F]ind Macros' })
 -- vim.keymap.set('n', '<space>e', '<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>', { desc = 'File [E]xplorer' })
 --database ui keymaps
 function Close_snacks_dashboard_and_toggle_dbui()
@@ -133,9 +133,9 @@ vim.keymap.set('n', '<leader>ls', ':lua require("tsht").nodes()<CR>', { desc = '
 vim.keymap.set('n', '<leader>tr', '<cmd>Neotest run<CR>', { desc = 'neo[T]est [R]un' })
 vim.keymap.set('n', '<leader>tR', '<cmd>Neotest run file<CR>', { desc = 'neo[T]est [R]un file' })
 
--- nvumi keymaps
-
-vim.keymap.set('n', '<leader>on', '<CMD>Nvumi<CR>', { desc = '[O]pen [N]vumi' })
+-- -- nvumi keymaps
+--
+-- vim.keymap.set('n', '<leader>on', '<CMD>Nvumi<CR>', { desc = '[O]pen [N]vumi' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
