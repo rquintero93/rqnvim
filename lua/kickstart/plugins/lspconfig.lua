@@ -116,7 +116,20 @@ return {
               end,
             })
           end
-
+          vim.api.nvim_create_autocmd('LspAttach', {
+            group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_hover', { clear = true }),
+            callback = function(args)
+              local client = vim.lsp.get_client_by_id(args.data.client_id)
+              if client == nil then
+                return
+              end
+              if client.name == 'ruff' then
+                -- Disable hover in favor of Pyright
+                client.server_capabilities.hoverProvider = false
+              end
+            end,
+            desc = 'LSP: Disable hover capability from Ruff',
+          })
           -- The following code creates a keymap to toggle inlay hints in your
           -- code, if the language server you are using supports them
           --
@@ -168,22 +181,13 @@ return {
               analysis = {
                 useLibraryCodeForTypes = true,
                 autoSearchPath = true,
-                -- inlayHints = {
-                --   callArgumentNames = true,
-                --   genericTypes = true,
-                -- },
               },
-
-              -- python = {
-              --   venvPath = '/path/to/venv',
-              --   venv = 'venv',
-              -- },
             },
           },
         },
         html = {},
         cssls = {},
-        ruff = { settings = { lint = { enable = false } } },
+        ruff = { settings = {} },
         taplo = {
           filetypes = { 'toml' },
           -- IMPORTANTE: esto es necesario para que taplo LSP funcione en repositorios que no sean git
@@ -235,13 +239,10 @@ return {
         'prettier',
         'sqlls',
         'sqlfmt',
-        'black',
-        'isort',
         'jsonls',
         'ruff',
         'taplo',
         'yamlls',
-        'jedi-language-server',
         'basedpyright',
         'sqlfluff',
         'typescript-language-server',
