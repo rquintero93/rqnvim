@@ -4,16 +4,43 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
 
   config = function()
+    local colors = {
+      blue = '#89b4fa',
+      cyan = '#74c7ec',
+      black = '#1e1e2e',
+      white = '#cdd6f4',
+      red = '#f38ba8',
+      violet = '#cba6f7',
+      lavender = '#b4befe',
+      grey = '#313244',
+      green = '#a6e3a1',
+    }
+
+    local bubbles_theme = {
+      normal = {
+        a = { fg = colors.black, bg = colors.blue },
+        b = { fg = colors.white, bg = colors.grey },
+        c = { fg = colors.white },
+      },
+
+      insert = { a = { fg = colors.black, bg = colors.green } },
+      visual = { a = { fg = colors.black, bg = colors.cyan } },
+      replace = { a = { fg = colors.black, bg = colors.violet } },
+      command = { a = { fg = colors.black, bg = colors.red } },
+
+      inactive = {
+        a = { fg = colors.white, bg = colors.black },
+        b = { fg = colors.white, bg = colors.black },
+        c = { fg = colors.white },
+      },
+    }
+
     require('lualine').setup {
       options = {
-        icons_enabled = true,
-        theme = 'catppuccin',
-        component_separators = { left = '', right = '' },
+        theme = bubbles_theme,
+        component_separators = '',
         section_separators = { left = '', right = '' },
-        disabled_filetypes = {
-          winbar = {},
-          statusline = { 'snacks_dashboard' },
-        },
+        disable_filetype = { winbar = {}, statusline = { 'snacks_dashboard' } },
         ignore_focus = {},
         always_divide_middle = true,
         always_show_tabline = true,
@@ -26,25 +53,30 @@ return {
       },
       sections = {
         lualine_a = {
-          'mode',
           {
-            'macro',
-            fmt = function()
-              local reg = vim.fn.reg_recording()
-              if reg ~= '' then
-                return 'Recording @' .. reg
-              end
-              return nil
-            end,
-            -- color = { fg = '#ff9e64' },
-            draw_empty = false,
+            'mode',
+            {
+              'macro',
+              fmt = function()
+                local reg = vim.fn.reg_recording()
+                if reg ~= '' then
+                  return 'Recording @' .. reg
+                end
+                return nil
+              end,
+              draw_empty = false,
+            },
+            separator = { left = '' },
+            right_padding = 2,
           },
         },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = {},
         lualine_x = { { require('action-hints').statusline }, 'encoding', 'filetype' },
         lualine_y = { 'progress' },
-        lualine_z = { 'location' },
+        lualine_z = {
+          { 'location', separator = { right = '' }, left_padding = 2 },
+        },
       },
       inactive_sections = {
         lualine_a = {},
@@ -55,6 +87,7 @@ return {
         lualine_z = {},
       },
       tabline = {
+
         lualine_a = { { 'buffers', mode = 2, use_mode_colors = true, hide_filename_extension = true } },
         lualine_b = {},
         lualine_c = {},
