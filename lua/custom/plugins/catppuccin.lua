@@ -93,9 +93,17 @@ return {
         which_key = true,
         nvimtree = true,
         treesitter = true,
+        beacon = true,
+        semantic_tokens = true,
+        treesitter_context = true,
+        markdown = true,
+        symbols_outline = true,
+        fzf = true,
+        dap = true,
+        dap_ui = true,
         mini = {
           enabled = true,
-          indentscope_color = '',
+          indentscope_color = 'blue',
         },
       },
     }
