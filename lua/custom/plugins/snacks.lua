@@ -33,7 +33,7 @@ return {
         easing = 'linear',
       },
     },
-    lazygit = { configure = true },
+    -- lazygit = {},
     animate = {},
     image = {},
     dashboard = {

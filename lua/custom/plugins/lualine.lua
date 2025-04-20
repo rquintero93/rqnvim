@@ -24,7 +24,7 @@ return {
       },
 
       insert = { a = { fg = colors.black, bg = colors.green } },
-      visual = { a = { fg = colors.black, bg = colors.cyan } },
+      visual = { a = { fg = colors.black, bg = colors.violet } },
       replace = { a = { fg = colors.black, bg = colors.violet } },
       command = { a = { fg = colors.black, bg = colors.red } },
 

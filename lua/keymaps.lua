@@ -72,7 +72,7 @@ vim.keymap.set('n', '<Leader>rr', '<cmd>IronRestart<cr>', { desc = '[R]epl [R]es
 vim.keymap.set('n', '<Leader>rf', '<cmd>IronFocus<cr>', { desc = '[R]epl [F]ocus' })
 vim.keymap.set('n', '<Leader>rh', '<cmd>IronHide<cr>', { desc = '[R]epl [H]ide' })
 
-vim.keymap.set('n', '<Leader>gg', '<cmd>lua Snacks.lazygit()<cr>', { desc = '[G]it [G]raph' })
+-- vim.keymap.set('n', '<Leader>gg', '<cmd>Toggleterm direction=float name=LazyGit lazygit <cr>', { desc = '[G]it [G]raph' })
 
 vim.keymap.set('n', '<Leader>cc', '<cmd>CopilotChatToggle<cr>', { desc = 'Toggle [C]opilot [C]hat' })
 vim.keymap.set('n', '<Leader>cR', '<cmd>CopilotChatReset<cr>', { desc = '[C]hat [R]eset' })
