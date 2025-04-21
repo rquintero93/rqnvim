@@ -88,12 +88,12 @@ return {
       },
       tabline = {
 
-        lualine_a = { { 'buffers', mode = 2, use_mode_colors = true, hide_filename_extension = true } },
-        lualine_b = {},
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = { { 'windows', mode = 1, use_mode_colors = true } },
-        lualine_z = { { 'tabs', use_mode_colors = true } },
+        -- lualine_a = { { 'buffers', mode = 2, use_mode_colors = true, hide_filename_extension = true } },
+        -- lualine_b = {},
+        -- lualine_c = {},
+        -- lualine_x = {},
+        -- lualine_y = { { 'windows', mode = 1, use_mode_colors = true } },
+        -- lualine_z = { { 'tabs', use_mode_colors = true } },
       },
       winbar = {},
       inactive_winbar = {},
