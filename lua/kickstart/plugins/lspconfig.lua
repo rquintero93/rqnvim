@@ -172,7 +172,13 @@ return {
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
-        sqlls = {},
+        -- sqlls = {
+        --   filetypes = { 'sql', 'bqsql' },
+        --   root_dir = function(_)
+        --     return vim.loop.cwd()
+        --   end,
+        --   settings = {},
+        -- },
         jsonls = {},
         -- jedi_language_server = { diagnostics = { enable = false }, hover = { enable = false }, jediSettings = { autoImportModules = { 'numpy', 'pandas' } } },
         basedpyright = {
