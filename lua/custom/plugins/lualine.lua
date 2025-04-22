@@ -63,13 +63,12 @@ return {
               end
               return nil
             end,
-            -- color = { fg = '#ff9e64' },
             draw_empty = false,
           },
         },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = {},
-        lualine_x = { { require('action-hints').statusline }, 'encoding', 'filetype' },
+        lualine_x = { { require('action-hints').statusline }, 'encoding', 'filetype', { 'lsp_status', ignore_lsp = { 'copilot', 'ruff' } } },
         lualine_y = { 'progress' },
         lualine_z = {
           { 'location', separator = { right = '' }, left_padding = 2 },
@@ -83,18 +82,10 @@ return {
         lualine_y = {},
         lualine_z = {},
       },
-      tabline = {
-
-        -- lualine_a = { { 'buffers', mode = 2, use_mode_colors = true, hide_filename_extension = true } },
-        -- lualine_b = {},
-        -- lualine_c = {},
-        -- lualine_x = {},
-        -- lualine_y = { { 'windows', mode = 1, use_mode_colors = true } },
-        -- lualine_z = { { 'tabs', use_mode_colors = true } },
-      },
+      tabline = {},
       winbar = {},
       inactive_winbar = {},
-      extensions = { 'lazy', 'quickfix', 'toggleterm', 'trouble', 'fzf', 'mason' },
+      extensions = { 'lazy', 'quickfix', 'toggleterm', 'trouble', 'fzf', 'mason', 'man', 'nvim-dap-ui' },
     }
   end,
 }
