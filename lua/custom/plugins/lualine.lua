@@ -67,11 +67,11 @@ return {
           },
         },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = {},
-        lualine_x = { { require('action-hints').statusline }, 'encoding', 'filetype', { 'lsp_status', ignore_lsp = { 'copilot', 'ruff' } } },
+        lualine_c = { 'filename' },
+        lualine_x = { { require('action-hints').statusline }, 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = {
-          { 'location', separator = { right = '' }, left_padding = 2 },
+          { 'location', separator = { right = '' } },
         },
       },
       inactive_sections = {
