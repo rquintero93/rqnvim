@@ -246,8 +246,6 @@ return {
         'html-lsp',
         'css-lsp',
         'prettier',
-        'sqlls',
-        'sqlfmt',
         'jsonls',
         'ruff',
         'taplo',
