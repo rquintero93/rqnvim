@@ -62,6 +62,9 @@ vim.o.clipboard = 'unnamedplus'
 
 vim.opt.whichwrap:append '<>[]hl'
 
+vim.opt.foldminlines = 0 -- Allow folding/hiding single lines
+vim.opt.fillchars = 'fold: ' -- Remove the trailing dots
+
 vim.opt.smartindent = true
 
 vim.opt.tabstop = 4
